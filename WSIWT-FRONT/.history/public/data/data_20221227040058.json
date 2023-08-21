@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "type": [0],
+      "name": "패딩",
+      "category": "paddedCoat",
+      "image": "../images/paddedCoat.png"
+    },
+    {
+      "type": [0],
+      "category": "winter-hat",
+      "name": "겨울 모자",
+      "image": "../images/winter-hat.png"
+    },
+    {
+      "type": [0],
+      "category": "muffler",
+      "name": "목도리",
+      "image": "../images/muffler.png"
+    },
+    {
+      "type": [1],
+      "category": "coat",
+      "name": "코트",
+      "image": "../images/coat.png"
+    },
+    {
+      "type": [1],
+      "category": "leather-jacket",
+      "name": "가죽 자켓",
+      "image": "../images/leather-jacket.png"
+    },
+    {
+      "type": [1],
+      "category": "sweater",
+      "name": "니트",
+      "image": "../images/sweater.png"
+    },
+    {
+      "type": [2],
+      "category": "jacket",
+      "name": "자켓",
+      "image": "../images/jacket.png"
+    },
+    {
+      "type": [2],
+      "category": "trench-coat",
+      "image": "../images/sweater.png"
+    },
+    {
+      "type": [2],
+      "category": "sweater",
+      "image": "../images/sweater.png"
+    }
+  ]
+}

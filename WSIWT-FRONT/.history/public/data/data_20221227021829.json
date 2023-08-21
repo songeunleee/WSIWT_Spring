@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "type": [0],
+      "category": "paddedCoat",
+      "image": "../public/images/paddedCoat.png"
+    },
+    {
+      "type": [0],
+      "category": "winter-hat",
+      "image": "../public/images/winter-hat.png"
+    },
+    {
+      "type": [0],
+      "category": "muffler",
+      "image": "../public/images/muffler.png"
+    },
+    {
+      "type": [1],
+      "category": "coat",
+      "image": "../public/images/coat.png"
+    },
+    {
+      "type": [1],
+      "category": "jacket",
+      "material": "leather",
+      "image": "../public/images/leather-jacket.png"
+    },
+    {
+      "type": [1],
+      "category": "sweater",
+      "image": "../public/images/sweater.png"
+    }
+  ]
+}

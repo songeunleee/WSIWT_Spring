@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply flex flex-col items-center h-screen;
+}
+
+#root {
+  @apply w-full max-w-screen-sm md:max-w-screen-xs;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.swiper .swiper-pagination {
+  bottom: 2rem !important;
+}
+.swiper .swiper-pagination-bullet {
+  background-color: #000;
+  margin: 0 10px !important;
+}

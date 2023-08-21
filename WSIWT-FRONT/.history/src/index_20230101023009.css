@@ -1,0 +1,41 @@
+@tailwind base;
+
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply flex flex-col items-center h-screen;
+}
+
+@font-face {
+  font-family: "IBMPlexSansKR-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#root {
+  @apply w-full max-w-sm sm:max-w-md md:max-w-screen-sm;
+  font-family: "IBMPlexSansKR-Regular";
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.swiper .swiper-pagination {
+  position: absolute;
+  height: 0px;
+  top: 2rem;
+}
+.swiper .swiper-pagination-bullet {
+  background-color: #bdb3a4;
+  margin: 0 10px !important;
+}

@@ -1,0 +1,27 @@
+import "./App.css";
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Footer from "./components/Footer";
+import { AuthContextProvider } from "./context/AuthContext";
+import usePublic from "./hooks/usePublic";
+
+const queryClient = new QueryClient();
+
+function App() {
+  const { categoryList } = usePublic();
+
+  console.log(categoryList);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AuthContextProvider>
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </AuthContextProvider>
+    </QueryClientProvider>
+  );
+}
+
+export default App;

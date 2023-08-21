@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "type": [1],
+      "category": "padding",
+      "image": "./public/images/padding.png"
+    },
+    {
+      "type": [1],
+      "category": "winter-hat",
+      "image": "./public/images/winter-hat.png"
+    },
+    {
+      "type": [1],
+      "category": "muffler",
+      "image": "./public/images/muffler.png"
+    },
+    {
+      "type": [2],
+      "category": "coat",
+      "image": "./public/images/coat.png"
+    },
+    {
+      "type": [2],
+      "category": "jacket",
+      "material": "leather",
+      "image": "./public/images/leather-jacket.png"
+    },
+    {
+      "type": [2],
+      "category": "knitwear",
+      "image": "./public/images/nitwear.png"
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "items": [
+    {
+      "type": [0],
+      "category": "패딩",
+      "main": "outer",
+      "middle": "paddedCoat",
+      "image": "../images/paddedCoat.png"
+    },
+    {
+      "type": [0],
+      "main": "etc",
+      "middle": "winter_hat",
+      "category": "겨울 모자",
+      "image": "../images/winter_hat.png"
+    },
+    {
+      "type": [0],
+      "main": "etc",
+      "middle": "muffler",
+      "category": "목도리",
+      "image": "../images/muffler.png"
+    },
+    {
+      "type": [0],
+      "main": "etc",
+      "middle": "gloves",
+      "category": "장갑",
+      "image": "../images/gloves.png"
+    },
+    {
+      "type": [1],
+      "main": "outer",
+      "middle": "coat",
+      "category": "코트",
+      "image": "../images/coat.png"
+    },
+    {
+      "type": [1],
+      "main": "top",
+      "middle": "sweater",
+      "category": "니트",
+      "image": "../images/sweater.png"
+    },
+    {
+      "type": [1],
+      "main": "outer",
+      "middle": "jacket",
+      "sub": "leather",
+      "category": "가죽 자켓",
+      "image": "../images/leather_jacket.png"
+    },
+    {
+      "type": [2],
+      "main": "outer",
+      "middle": "trench_coat",
+      "category": "트렌치 코트",
+      "image": "../images/trench_coat.png"
+    },
+    {
+      "type": [2],
+      "main": "etc",
+      "middle": "black_tights",
+      "category": "검은색 스타킹",
+      "image": "../images/black_tights.png"
+    },
+    {
+      "type": [3],
+      "main": "outer",
+      "middle": "cardigan",
+      "category": "가디건",
+      "image": "../images/cardigan.png"
+    },
+
+    {
+      "type": [4],
+      "main": "outer",
+      "middle": "jacket",
+      "sub": "thin",
+      "category": "얇은 자켓",
+      "image": "../images/thin_jacket.png"
+    },
+    {
+      "type": [4],
+      "main": "top",
+      "middle": "sweater",
+      "sub": "thin",
+      "category": "얇은 니트",
+      "image": "../images/thin_sweater.png"
+    },
+    {
+      "type": [5],
+      "main": "top",
+      "middle": "blouse",
+      "category": "블라우스",
+      "image": "../images/blouse.png"
+    },
+
+    {
+      "type": [6],
+      "main": "top",
+      "middle": "shirt",
+      "sub": "thin",
+      "category": "얇은 셔츠",
+      "image": "../images/thin_shirt.png"
+    },
+    {
+      "type": [7],
+      "main": "top",
+      "middle": "sleeveless",
+      "category": "민소매",
+      "image": "../images/sleeveless.png"
+    },
+    {
+      "type": [7],
+      "main": "dress",
+      "middle": "dress",
+      "sub": "thin",
+      "category": "얇은 원피스",
+      "image": "../images/thin_dress.png"
+    },
+    {
+      "type": [2, 3],
+      "main": "outer",
+      "middle": "jacket",
+      "category": "자켓",
+      "image": "../images/jacket.png"
+    },
+    {
+      "type": [3, 4],
+      "main": "top",
+      "middle": "shirt",
+      "category": "셔츠",
+      "image": "../images/shirt.png"
+    },
+    {
+      "type": [4, 5],
+      "main": "outer",
+      "middle": "cardigan",
+      "sub": "thin",
+      "category": "얇은 가디건",
+      "image": "../images/thin_cardigan.png"
+    },
+    {
+      "type": [4, 5],
+      "main": "top",
+      "middle": "hoodie",
+      "category": "후드티",
+      "image": "../images/hoodie.png"
+    },
+    {
+      "type": [4, 5],
+      "main": "bottom",
+      "middle": "pants",
+      "sub": "slacks",
+      "category": "슬랙스",
+      "image": "../images/slacks_pants.png"
+    },
+    {
+      "type": [6, 7],
+      "main": "top",
+      "middle": "short_sleeve",
+      "category": "반팔",
+      "image": "../images/short_sleeve.png"
+    },
+    {
+      "type": [6, 7],
+      "main": "bottom",
+      "middle": "short",
+      "category": "반바지",
+      "image": "../images/short.png"
+    },
+    {
+      "type": [6, 7],
+      "main": "top",
+      "middle": "shirt",
+      "sub": "short",
+      "category": "반팔 셔츠",
+      "image": "../images/short_shirt.png"
+    },
+    {
+      "type": [0, 1, 3],
+      "main": "top",
+      "middle": "hoodie",
+      "sub": "fleece_lined",
+      "category": "기모 후드티",
+      "image": "../images/fleece_lined_hoodie.png"
+    },
+    {
+      "type": [3, 4, 5],
+      "main": "top",
+      "middle": "long_sleeve",
+      "category": "긴팔",
+      "image": "../images/long_sleeve.png"
+    },
+
+    {
+      "type": [6, 5, 4, 3, 2],
+      "main": "bottom",
+      "middle": "pants",
+      "category": "긴바지",
+      "image": "../images/pants.png"
+    },
+    {
+      "type": [1, 2, 3, 4, 5],
+      "main": "bottom",
+      "middle": "pants",
+      "sub": "jeans",
+      "category": "청바지",
+      "image": "../images/jeans_pants.png"
+    },
+    {
+      "type": [0, 1, 2],
+      "main": "bottom",
+      "middle": "pants",
+      "sub": "fleece_lined",
+      "category": "기모 바지",
+      "image": "../images/fleece_lined_pants.png"
+    },
+    {
+      "type": [3],
+      "main": "etc",
+      "middle": "skin_tights",
+      "category": "살색 스타킹",
+      "image": "../images/skin_tights.png"
+    },
+    {
+      "type": [6],
+      "main": "top",
+      "middle": "long_sleeve",
+      "sub": "thin",
+      "category": "얇은 긴팔",
+      "image": "../images/thin_long_sleeve.png"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+import axios from "axios";
+
+const instance = axios.create({
+  baseURL: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0",
+});
+
+const params = {};
+
+export function getUltraSrtFcst() {
+  instance
+    .get("/getUltraSrtFcst", {
+      params: {
+        serviceKey: process.env.REACT_APP_API_KEY,
+        pageNo: 1,
+        numOfRows: 1000,
+        dataType: "JSON",
+        base_date: "20221214",
+        base_time: "2200",
+        nx: 55,
+        ny: 127,
+      },
+    })
+    .then((res) => res.data.response.body.items)
+    .then(console.log);
+}
