@@ -122,7 +122,7 @@ export default function NewClothes() {
         </div>
         <input
           required
-          className="border-2 border-color1 p-1 px-2 rounded-sm outline-none"
+          className="border-2 border-color1 p-1 px-2 rounded-sm"
           type="text"
           placeholder="옷을 구별할 이름"
           ref={nameRef}
