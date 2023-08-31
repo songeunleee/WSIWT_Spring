@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function OOTD() {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("new");
+    navigate("/new");
   };
   return (
     <section className="flex flex-col items-center">
