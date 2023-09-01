@@ -61,7 +61,7 @@ export default function NewClothes() {
       const newClothes = {
         id: Date.now(),
         type: setType(division.middle, division.sub),
-        ...division,
+        category: division.category,
         name: nameRef.current.value,
       };
       file

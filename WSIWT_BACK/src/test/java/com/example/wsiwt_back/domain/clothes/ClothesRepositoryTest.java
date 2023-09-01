@@ -1,14 +1,11 @@
 package com.example.wsiwt_back.domain.clothes;
 
 
-import com.example.wsiwt_back.dmain.clothes.Clothes;
-import com.example.wsiwt_back.dmain.clothes.ClothesRepository;
 import org.aspectj.lang.annotation.After;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
