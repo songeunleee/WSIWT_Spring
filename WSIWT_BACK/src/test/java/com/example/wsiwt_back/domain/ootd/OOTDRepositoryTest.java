@@ -6,20 +6,20 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-@SpringBootTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@DataJpaTest
 public class OOTDRepositoryTest {
 
-    @Autowired OOTDRepository ootdRepository;
+    @Autowired
+    OOTDRepository ootdRepository;
 
-    @After("")
-    public void cleanup(){
-        ootdRepository.deleteAll();
-    }
+
 
     @Test
     @DisplayName("OOTD 저장")
