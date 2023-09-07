@@ -6,6 +6,7 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 @Getter
+
 public class OOTDResponseDto {
 
     private Long id;
@@ -20,8 +21,10 @@ public class OOTDResponseDto {
         this.content = ootd.getContent();
         this.author = ootd.getAuthor();
         this.imgUrl = ootd.getUrl();
-        this.createdAt = ootd.getCreatedAt();
-        this.updatedAt = ootd.getUpdatedAt();
+       // this.createdAt = ootd.getCreatedAt();
+       // this.updatedAt = ootd.getUpdatedAt();
     }
+
+
 
 }

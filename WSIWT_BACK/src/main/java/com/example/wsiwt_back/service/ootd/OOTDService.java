@@ -18,9 +18,9 @@ public class OOTDService {
     private final OOTDRepository ootdRepository;
 
 
-    public OOTD save(OOTDSaveRequestDto requestDto){
+    public Long save(OOTDSaveRequestDto requestDto){
         //String url = "images/winter_hat.png";
-        return ootdRepository.save(requestDto.toEntity());
+        return ootdRepository.save(requestDto.toEntity()).getId();
     }
     public List<OOTD> findAll(){
         return ootdRepository.findAll();

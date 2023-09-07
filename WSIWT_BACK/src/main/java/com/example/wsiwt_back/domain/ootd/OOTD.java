@@ -37,11 +37,16 @@ public class OOTD {
     private LocalDateTime updatedAt;
 
     @Builder
-    public OOTD(String content, String author, String url){
+    public OOTD(Long id, String content, String author, String url){
+        this.id = id;
         this.content = content;
         this.author = author;
         this.url = url;
+
     }
+
+
+
 
     public void update(String content){
         this.content = content;

@@ -3,9 +3,13 @@ package com.example.wsiwt_back.domain.web.dto.ootd;
 import com.example.wsiwt_back.domain.clothes.Clothes;
 import com.example.wsiwt_back.domain.ootd.OOTD;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+@Getter
+@NoArgsConstructor
 
 public class OOTDSaveRequestDto {
 

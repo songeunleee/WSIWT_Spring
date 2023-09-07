@@ -21,7 +21,7 @@ public class OOTDApiController {
     private final OOTDService ootdService;
 
     @PostMapping("/api/ootd")
-    public ResponseEntity<OOTD> save(@RequestBody OOTDSaveRequestDto requestDto){
+    public ResponseEntity<Long> save(@RequestBody OOTDSaveRequestDto requestDto){
         return  ResponseEntity.status(HttpStatus.CREATED).body(ootdService.save(requestDto));
     }
 
