@@ -1,14 +1,12 @@
 package com.example.wsiwt_back.domain.ootd;
 
-import com.example.wsiwt_back.domain.web.dto.ootd.OOTDSaveRequestDto;
-import org.aspectj.lang.annotation.After;
+import com.example.wsiwt_back.web.dto.ootd.OOTDSaveRequestDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
@@ -18,8 +16,6 @@ public class OOTDRepositoryTest {
 
     @Autowired
     OOTDRepository ootdRepository;
-
-
 
     @Test
     @DisplayName("OOTD 저장")

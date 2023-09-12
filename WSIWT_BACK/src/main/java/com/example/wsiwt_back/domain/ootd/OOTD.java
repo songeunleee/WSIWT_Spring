@@ -45,9 +45,6 @@ public class OOTD {
 
     }
 
-
-
-
     public void update(String content){
         this.content = content;
     }

@@ -1,4 +1,4 @@
-package com.example.wsiwt_back.domain.web.dto.clothes;
+package com.example.wsiwt_back.web.dto.clothes;
 
 import com.example.wsiwt_back.domain.clothes.Clothes;
 import org.springframework.web.multipart.MultipartFile;

@@ -1,4 +1,4 @@
-package com.example.wsiwt_back.domain.web.dto.ootd;
+package com.example.wsiwt_back.web.dto.ootd;
 
 import lombok.Builder;
 import lombok.Getter;

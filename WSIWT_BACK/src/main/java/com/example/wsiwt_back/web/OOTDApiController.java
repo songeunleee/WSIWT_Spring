@@ -1,9 +1,9 @@
-package com.example.wsiwt_back.domain.web;
+package com.example.wsiwt_back.web;
 
 import com.example.wsiwt_back.domain.ootd.OOTD;
-import com.example.wsiwt_back.domain.web.dto.ootd.OOTDResponseDto;
-import com.example.wsiwt_back.domain.web.dto.ootd.OOTDSaveRequestDto;
-import com.example.wsiwt_back.domain.web.dto.ootd.OOTDUpdateRequestDto;
+import com.example.wsiwt_back.web.dto.ootd.OOTDResponseDto;
+import com.example.wsiwt_back.web.dto.ootd.OOTDSaveRequestDto;
+import com.example.wsiwt_back.web.dto.ootd.OOTDUpdateRequestDto;
 import com.example.wsiwt_back.service.ootd.OOTDService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

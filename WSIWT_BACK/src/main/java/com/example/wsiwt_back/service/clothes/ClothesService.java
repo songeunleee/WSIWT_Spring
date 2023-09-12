@@ -2,7 +2,7 @@ package com.example.wsiwt_back.service.clothes;
 
 import com.example.wsiwt_back.domain.clothes.Clothes;
 import com.example.wsiwt_back.domain.clothes.ClothesRepository;
-import com.example.wsiwt_back.domain.web.dto.clothes.ClothesSaveRequestDto;
+import com.example.wsiwt_back.web.dto.clothes.ClothesSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

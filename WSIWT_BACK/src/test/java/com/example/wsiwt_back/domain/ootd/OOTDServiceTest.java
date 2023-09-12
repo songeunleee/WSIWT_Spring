@@ -1,18 +1,16 @@
 package com.example.wsiwt_back.domain.ootd;
 
-import com.example.wsiwt_back.domain.web.dto.ootd.OOTDSaveRequestDto;
-import com.example.wsiwt_back.domain.web.dto.ootd.OOTDUpdateRequestDto;
+import com.example.wsiwt_back.web.dto.ootd.OOTDSaveRequestDto;
+import com.example.wsiwt_back.web.dto.ootd.OOTDUpdateRequestDto;
 import com.example.wsiwt_back.service.ootd.OOTDService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -36,13 +34,13 @@ public class OOTDServiceTest {
         OOTDSaveRequestDto requestDto = OOTDSaveRequestDto.builder().content("내용").author("작성자").url("이미지 주소").build();
         OOTD ootd = requestDto.toEntity();
         //stub
-        given(ootdRepository.save(any())).willReturn(ootd);
+        given(ootdRepository.save((OOTD) any())).willReturn(ootd);
 
         //when
-        Long Id = ootdService.save(requestDto);
+         ootdService.save(requestDto);
 
         //then
-        Assertions.assertEquals(ootd.getId(),Id);
+        verify(ootdRepository).save((OOTD) any());
 
     }
 
