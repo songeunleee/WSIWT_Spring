@@ -21,8 +21,8 @@ public class OOTDResponseDto {
         this.content = ootd.getContent();
         this.author = ootd.getAuthor();
         this.imgUrl = ootd.getUrl();
-       // this.createdAt = ootd.getCreatedAt();
-       // this.updatedAt = ootd.getUpdatedAt();
+        this.createdAt = ootd.getCreatedDate();
+        this.updatedAt = ootd.getModifiedDate();
     }
 
 

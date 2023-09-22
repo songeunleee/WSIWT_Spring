@@ -19,28 +19,30 @@ import java.util.stream.Collectors;
 public class OOTDApiController {
 
     private final OOTDService ootdService;
-
-    @PostMapping("/api/ootd")
+    @CrossOrigin
+    @PostMapping("/api/v1/ootd")
     public ResponseEntity<Long> save(@RequestBody OOTDSaveRequestDto requestDto){
         return  ResponseEntity.status(HttpStatus.CREATED).body(ootdService.save(requestDto));
     }
-
-    @GetMapping("api/ootds")
+    @CrossOrigin
+    @GetMapping("/ootds")
     public ResponseEntity<List<OOTDResponseDto>> findAllOOTDs(){
+        System.out.println(2);
         List<OOTDResponseDto> ootds = ootdService.findAll()
                 .stream()
                 .map(OOTDResponseDto::new)
                 .collect(Collectors.toList());
+
         return ResponseEntity.ok().body(ootds);
     }
 
-    @PutMapping("api/ootd/{id}")
+    @PutMapping("api/v1/ootd/{id}")
     public ResponseEntity<OOTD> update(@PathVariable Long id, @RequestBody OOTDUpdateRequestDto requestDto){
         OOTD updatedOOTD = ootdService.update(id,requestDto);
         return ResponseEntity.ok().body(updatedOOTD);
     }
 
-    @DeleteMapping("api/ootd/{id}")
+    @DeleteMapping("api/v1/ootd/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
         ootdService.delete(id);
         return ResponseEntity.ok().build();

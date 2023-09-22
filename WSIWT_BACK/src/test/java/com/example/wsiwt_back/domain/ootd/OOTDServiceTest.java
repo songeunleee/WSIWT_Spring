@@ -21,7 +21,7 @@ import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 public class OOTDServiceTest {
-    @InjectMocks
+
     private OOTDService ootdService;
 
     @Mock

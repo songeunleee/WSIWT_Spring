@@ -1,5 +1,6 @@
 package com.example.wsiwt_back.domain.ootd;
 
+import com.example.wsiwt_back.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-public class OOTD {
+public class OOTD extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,14 +28,6 @@ public class OOTD {
     public String content;
 
     private String author;
-
-    @CreatedDate
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
-
-    @LastModifiedDate
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
 
     @Builder
     public OOTD(Long id, String content, String author, String url){

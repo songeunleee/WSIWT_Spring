@@ -1,5 +1,6 @@
 package com.example.wsiwt_back.domain.clothes;
 
+import com.example.wsiwt_back.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 
 @Entity
-public class Clothes {
+public class Clothes extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

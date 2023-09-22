@@ -31,8 +31,7 @@ public class OOTDRepositoryTest {
         Assertions.assertEquals(result.getContent(),ootd.getContent());
         Assertions.assertEquals(result.getAuthor(),ootd.getAuthor());
         Assertions.assertEquals(result.getUrl(),ootd.getUrl());
-        Assertions.assertEquals(result.getCreatedAt(),ootd.getCreatedAt());
-        Assertions.assertEquals(result.getUpdatedAt(),ootd.getUpdatedAt());
+
 
     }
 

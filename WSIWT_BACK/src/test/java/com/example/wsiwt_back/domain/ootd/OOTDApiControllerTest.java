@@ -1,7 +1,6 @@
 package com.example.wsiwt_back.domain.ootd;
 
 import com.example.wsiwt_back.web.OOTDApiController;
-import com.example.wsiwt_back.web.dto.ootd.OOTDResponseDto;
 import com.example.wsiwt_back.web.dto.ootd.OOTDSaveRequestDto;
 import com.example.wsiwt_back.web.dto.ootd.OOTDUpdateRequestDto;
 import com.example.wsiwt_back.service.ootd.OOTDService;
@@ -12,7 +11,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -30,7 +28,6 @@ import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -68,7 +65,7 @@ public class OOTDApiControllerTest {
 
 
         //when
-       mockMvc.perform(MockMvcRequestBuilders.post("/api/ootd")
+       mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/ootd")
                 .content(objectMapper.writeValueAsString(requestDto))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isCreated());
@@ -94,7 +91,7 @@ public class OOTDApiControllerTest {
         given(ootdService.findAll()).willReturn(list);
 
         //when
-     mockMvc.perform(MockMvcRequestBuilders.get("/api/ootds")
+     mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/ootds")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
 
@@ -117,7 +114,7 @@ public class OOTDApiControllerTest {
        given(ootdService.update(anyLong(),any())).willReturn(ootd);
 
         //when
-       MvcResult result = mockMvc.perform(MockMvcRequestBuilders.put("/api/ootd/"+Id)
+       MvcResult result = mockMvc.perform(MockMvcRequestBuilders.put("/api/v1/ootd/"+Id)
                         .content(objectMapper.writeValueAsString(requestDto))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
@@ -144,7 +141,7 @@ public class OOTDApiControllerTest {
 
 
         //when
-        mockMvc.perform(MockMvcRequestBuilders.delete("/api/ootd/"+Id)
+        mockMvc.perform(MockMvcRequestBuilders.delete("/api/v1/ootd/"+Id)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
 

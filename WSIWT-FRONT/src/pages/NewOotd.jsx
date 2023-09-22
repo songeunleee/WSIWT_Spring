@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { postOOTDs } from "../api/database";
 
 export default function NewOotd() {
   const [file, setFile] = useState();
@@ -16,6 +17,10 @@ export default function NewOotd() {
       setFile(files && files[0]);
       return;
     }
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    postOOTDs();
   };
   return (
     <section>
@@ -40,16 +45,15 @@ export default function NewOotd() {
             className="hidden"
             type="file"
             name="file"
-            required
             onChange={handleChange}
           />
         </div>
         <input
-          required
           className="border-2 border-color3 p-1 px-2 rounded-sm h-40 outline-none"
           type="text"
           placeholder="TEXT"
         />
+        <button onClick={handleSubmit}>등록</button>
       </form>
     </section>
   );
