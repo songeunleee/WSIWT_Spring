@@ -1,4 +1,4 @@
-package com.example.wsiwt_back.service.clothes;
+package com.example.wsiwt_back.service;
 
 import com.example.wsiwt_back.domain.clothes.Clothes;
 import com.example.wsiwt_back.domain.clothes.ClothesRepository;

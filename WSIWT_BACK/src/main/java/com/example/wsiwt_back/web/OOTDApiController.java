@@ -4,7 +4,7 @@ import com.example.wsiwt_back.domain.ootd.OOTD;
 import com.example.wsiwt_back.web.dto.ootd.OOTDResponseDto;
 import com.example.wsiwt_back.web.dto.ootd.OOTDSaveRequestDto;
 import com.example.wsiwt_back.web.dto.ootd.OOTDUpdateRequestDto;
-import com.example.wsiwt_back.service.ootd.OOTDService;
+import com.example.wsiwt_back.service.OOTDService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

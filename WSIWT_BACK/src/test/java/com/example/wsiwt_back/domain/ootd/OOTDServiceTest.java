@@ -2,12 +2,11 @@ package com.example.wsiwt_back.domain.ootd;
 
 import com.example.wsiwt_back.web.dto.ootd.OOTDSaveRequestDto;
 import com.example.wsiwt_back.web.dto.ootd.OOTDUpdateRequestDto;
-import com.example.wsiwt_back.service.ootd.OOTDService;
+import com.example.wsiwt_back.service.OOTDService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 

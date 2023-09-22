@@ -1,4 +1,4 @@
-package com.example.wsiwt_back.service.ootd;
+package com.example.wsiwt_back.service;
 
 import com.example.wsiwt_back.domain.ootd.OOTD;
 import com.example.wsiwt_back.domain.ootd.OOTDRepository;

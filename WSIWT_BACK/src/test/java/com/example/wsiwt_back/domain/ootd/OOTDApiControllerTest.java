@@ -3,7 +3,7 @@ package com.example.wsiwt_back.domain.ootd;
 import com.example.wsiwt_back.web.OOTDApiController;
 import com.example.wsiwt_back.web.dto.ootd.OOTDSaveRequestDto;
 import com.example.wsiwt_back.web.dto.ootd.OOTDUpdateRequestDto;
-import com.example.wsiwt_back.service.ootd.OOTDService;
+import com.example.wsiwt_back.service.OOTDService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.assertj.core.api.Assertions;
 import org.json.JSONObject;
