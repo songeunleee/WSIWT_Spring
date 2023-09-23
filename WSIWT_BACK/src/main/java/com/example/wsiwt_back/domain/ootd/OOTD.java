@@ -29,12 +29,15 @@ public class OOTD extends BaseTimeEntity {
 
     private String author;
 
+    private String userId;
+
     @Builder
-    public OOTD(Long id, String content, String author, String url){
+    public OOTD(Long id, String content, String author, String url, String userId){
         this.id = id;
         this.content = content;
         this.author = author;
         this.url = url;
+        this.userId = userId;
 
     }
 

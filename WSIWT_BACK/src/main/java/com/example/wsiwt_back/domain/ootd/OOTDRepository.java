@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface OOTDRepository extends JpaRepository<OOTD,Long> {
 
-    @Query("select t from OOTD t where t.author = ?1")
-    List<OOTD> findByAuthor(String author);
+    @Query("select t from OOTD t where t.userId = ?1")
+    List<OOTD> findByUserId(String UserId);
 
 }

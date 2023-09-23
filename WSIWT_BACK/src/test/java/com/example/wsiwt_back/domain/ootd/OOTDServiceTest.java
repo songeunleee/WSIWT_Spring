@@ -36,7 +36,7 @@ public class OOTDServiceTest {
         given(ootdRepository.save((OOTD) any())).willReturn(ootd);
 
         //when
-         ootdService.save(requestDto);
+         ootdService.save(ootd);
 
         //then
         verify(ootdRepository).save((OOTD) any());
@@ -48,9 +48,9 @@ public class OOTDServiceTest {
     public void readOOTD(){
         //given
         List<OOTD> ootdList = new ArrayList<>();
-        ootdList.add(new OOTD(0L,"내용","작성자","url"));
-        ootdList.add(new OOTD(1L,"내용1","작성자1","url1"));
-        ootdList.add(new OOTD(2L,"내용2","작성자2","url2"));
+        ootdList.add(new OOTD(0L,"내용","작성자","url","ID"));
+        ootdList.add(new OOTD(1L,"내용1","작성자1","url1","Id"));
+        ootdList.add(new OOTD(2L,"내용2","작성자2","url2","id"));
 
         //stub
         given(ootdRepository.findAll()).willReturn(ootdList);

@@ -8,6 +8,8 @@ import com.example.wsiwt_back.service.OOTDService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,15 +21,17 @@ import java.util.stream.Collectors;
 public class OOTDApiController {
 
     private final OOTDService ootdService;
-    @CrossOrigin
+
     @PostMapping("/api/v1/ootd")
-    public ResponseEntity<Long> save(@RequestBody OOTDSaveRequestDto requestDto){
-        return  ResponseEntity.status(HttpStatus.CREATED).body(ootdService.save(requestDto));
+    public ResponseEntity<Long> save(@AuthenticationPrincipal String userId, @RequestBody OOTDSaveRequestDto requestDto){
+
+        OOTD ootd = OOTD.builder().userId(userId).url(requestDto.getUrl()).author(requestDto.getAuthor()).content(requestDto.getContent()).build();
+
+        return  ResponseEntity.status(HttpStatus.CREATED).body(ootdService.save(ootd));
     }
-    @CrossOrigin
-    @GetMapping("/ootds")
+
+    @GetMapping("/api/v1/ootds")
     public ResponseEntity<List<OOTDResponseDto>> findAllOOTDs(){
-        System.out.println(2);
         List<OOTDResponseDto> ootds = ootdService.findAll()
                 .stream()
                 .map(OOTDResponseDto::new)
@@ -37,7 +41,8 @@ public class OOTDApiController {
     }
 
     @PutMapping("api/v1/ootd/{id}")
-    public ResponseEntity<OOTD> update(@PathVariable Long id, @RequestBody OOTDUpdateRequestDto requestDto){
+    public ResponseEntity<OOTD> update(@AuthenticationPrincipal String userId, @PathVariable Long id, @RequestBody OOTDUpdateRequestDto requestDto){
+
         OOTD updatedOOTD = ootdService.update(id,requestDto);
         return ResponseEntity.ok().body(updatedOOTD);
     }

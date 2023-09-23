@@ -20,10 +20,15 @@ public class OOTDService {
     private final OOTDRepository ootdRepository;
 
 
-    public Long save(OOTDSaveRequestDto requestDto){
+    public Long save(OOTD entity){
         //String url = "images/winter_hat.png";
-        return ootdRepository.save(requestDto.toEntity()).getId();
+        return ootdRepository.save(entity).getId();
     }
+
+    public OOTD findById(Long id)
+    {return  ootdRepository.findById(id)
+            .orElseThrow(()->new IllegalArgumentException(" not exist : " + id)); }
+
     public List<OOTD> findAll(){
         return ootdRepository.findAll();
     }
@@ -36,7 +41,8 @@ public class OOTDService {
     public OOTD update(Long id, OOTDUpdateRequestDto requestDto){
         OOTD ootd = ootdRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
         ootd.update(requestDto.getContent());
-
         return ootd;
     }
+
+
 }
