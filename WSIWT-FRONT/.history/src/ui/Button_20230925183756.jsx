@@ -1,0 +1,13 @@
+import React from "react";
+
+export default function Button({ text, onClick }) {
+  console.log(1);
+  return (
+    <button
+      onClick={onClick}
+      className=" bg-color1 text-white rounded-sm hover:brightness-110 p-2 px-4 text-grey"
+    >
+      {text}
+    </button>
+  );
+}
