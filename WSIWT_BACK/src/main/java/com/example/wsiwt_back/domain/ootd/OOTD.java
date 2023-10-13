@@ -21,7 +21,7 @@ public class OOTD extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
-    @Column(nullable = false)
+    @Column
     private String url;
 
     @Column(nullable = false)
@@ -41,7 +41,8 @@ public class OOTD extends BaseTimeEntity {
 
     }
 
-    public void update(String content){
+    public void update(String content, String url){
         this.content = content;
+        this.url = url;
     }
 }

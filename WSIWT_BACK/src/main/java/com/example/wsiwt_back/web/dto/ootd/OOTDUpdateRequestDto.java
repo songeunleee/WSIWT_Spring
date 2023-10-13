@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class OOTDUpdateRequestDto {
-
+    private String url;
     private String content;
 
     @Builder
