@@ -4,7 +4,7 @@ import { useAuthContext } from "../context/AuthContext";
 import { uploadImage } from "../api/uploader";
 import { useLocation } from "react-router-dom";
 
-export default function NewOotd() {
+export default function UpdateOotd() {
   const [file, setFile] = useState();
   const [content, setContent] = useState();
   const { user } = useAuthContext();
@@ -28,6 +28,7 @@ export default function NewOotd() {
     }
     setContent(e.target.value);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!file) {
@@ -39,6 +40,7 @@ export default function NewOotd() {
     }
     console.log(file, content);
   };
+
   return (
     <section>
       <form className="flex flex-col">
@@ -46,7 +48,7 @@ export default function NewOotd() {
           {file && (
             <img
               className="w-40 mx-auto mb-5"
-              src={URL.createObjectURL(file)}
+              src={file ? URL.createObjectURL(file) : location.state.imgUrl}
               alt=""
             />
           )}

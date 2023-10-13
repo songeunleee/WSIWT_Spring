@@ -14,7 +14,7 @@ export default function OOTD() {
   }, []);
 
   const handledelete = (id) => {
-    setOotds((pre) => pre.filter((item) => item.id !== id));
+    setOotds((pre) => pre.filter((item) => item !== id));
     console.log(ootds);
   };
 

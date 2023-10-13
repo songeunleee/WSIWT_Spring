@@ -1,17 +1,17 @@
 import React, { useRef, useState } from "react";
-import { postOOTD } from "../api/database";
+import { postOOTD, updateOOTD } from "../api/database";
 import { useAuthContext } from "../context/AuthContext";
 import { uploadImage } from "../api/uploader";
 import { useLocation } from "react-router-dom";
 
-export default function NewOotd() {
+export default function UpdateOotd() {
   const [file, setFile] = useState();
   const [content, setContent] = useState();
   const { user } = useAuthContext();
 
   const location = useLocation();
 
-  console.log(location);
+  console.log(location.state.id);
 
   const inputRef = useRef();
   const nameRef = useRef();
@@ -28,28 +28,32 @@ export default function NewOotd() {
     }
     setContent(e.target.value);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!file) {
-      alert("사진을 등록해 주세요");
-    } else {
-      uploadImage(file).then((url) => {
-        postOOTD({ url: url, content: content, author: user.name });
-      });
-    }
+
+    file
+      ? uploadImage(file).then((url) => {
+          updateOOTD({ id: location.state.id, url: url, content: content });
+        })
+      : updateOOTD(
+          { id: location.state.id, content: content },
+          location.state.id
+        );
+
     console.log(file, content);
   };
+
   return (
     <section>
       <form className="flex flex-col">
         <div className="flex flex-col justify-center mb-3 items-center">
-          {file && (
-            <img
-              className="w-40 mx-auto mb-5"
-              src={URL.createObjectURL(file)}
-              alt=""
-            />
-          )}
+          <img
+            className="w-40 mx-auto mb-5"
+            src={file ? URL.createObjectURL(file) : location.state.imgUrl}
+            alt=""
+          />
+
           <div
             className=" bg-color4 text-white cursor-pointer rounded-sm hover:brightness-110 p-2 px-4 text-grey"
             onClick={handleClick}

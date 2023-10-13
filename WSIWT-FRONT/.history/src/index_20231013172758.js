@@ -14,7 +14,6 @@ import OOTD from "./pages/Ootd";
 import NewOotd from "./pages/NewOotd";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import UpdateOotd from "./pages/UpdateOotd";
 
 const router = createBrowserRouter([
   {

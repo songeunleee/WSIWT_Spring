@@ -2,16 +2,11 @@ import React, { useRef, useState } from "react";
 import { postOOTD } from "../api/database";
 import { useAuthContext } from "../context/AuthContext";
 import { uploadImage } from "../api/uploader";
-import { useLocation } from "react-router-dom";
 
 export default function NewOotd() {
   const [file, setFile] = useState();
   const [content, setContent] = useState();
   const { user } = useAuthContext();
-
-  const location = useLocation();
-
-  console.log(location);
 
   const inputRef = useRef();
   const nameRef = useRef();

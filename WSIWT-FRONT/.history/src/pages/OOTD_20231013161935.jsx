@@ -14,8 +14,7 @@ export default function OOTD() {
   }, []);
 
   const handledelete = (id) => {
-    setOotds((pre) => pre.filter((item) => item.id !== id));
-    console.log(ootds);
+    setOotds((pre) => ({ ...pre.filter((item) => item !== id) }));
   };
 
   return (
@@ -28,7 +27,7 @@ export default function OOTD() {
       </button>
       <div className="bg-color4 p-3">
         {ootds.map((item) => (
-          <OotdCard ootd={item} key={item.id} onDelete={handledelete} />
+          <OotdCard ootd={item} key={item.id} />
         ))}
       </div>
     </section>

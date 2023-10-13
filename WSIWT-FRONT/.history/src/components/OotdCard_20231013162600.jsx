@@ -6,16 +6,12 @@ import { BsFillTrashFill } from "react-icons/bs";
 import { HiPencilSquare } from "react-icons/hi2";
 import { useAuthContext } from "../context/AuthContext";
 import { deleteOOTD } from "../api/database";
-import { useNavigate } from "react-router-dom";
 
 export default function OotdCard({ ootd, onDelete }) {
   const { user } = useAuthContext();
-  const navigation = useNavigate();
   const handleClickDelete = (id) => {
-    deleteOOTD(id).then(onDelete(id));
-  };
-  const handleClickUpdate = (ootd) => {
-    navigation("/ootd/update", { state: ootd });
+    onDelete(id);
+    deleteOOTD(id);
   };
   return (
     <section className="flex flex-col justify-center items-center   rounded-xl bg-color3 py-5 mb-3">
@@ -29,16 +25,14 @@ export default function OotdCard({ ootd, onDelete }) {
               name: ootd.author,
             }}
           />
-          {user.name === ootd.author && (
-            <div className="flex gap-1.5">
-              <button onClick={() => handleClickUpdate(ootd)}>
-                <HiPencilSquare />
-              </button>
-              <button onClick={() => handleClickDelete(ootd.id)}>
-                <BsFillTrashFill />
-              </button>
-            </div>
-          )}
+          <div className="flex gap-1.5">
+            <button>
+              <HiPencilSquare />
+            </button>
+            <button onClick={() => handleClickDelete(ootd.id)}>
+              <BsFillTrashFill />
+            </button>
+          </div>
         </div>
         <div className="mt-1">{ootd.content}</div>
       </div>

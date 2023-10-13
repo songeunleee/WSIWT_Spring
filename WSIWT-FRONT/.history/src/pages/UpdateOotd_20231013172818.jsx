@@ -28,6 +28,7 @@ export default function NewOotd() {
     }
     setContent(e.target.value);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!file) {
@@ -39,6 +40,7 @@ export default function NewOotd() {
     }
     console.log(file, content);
   };
+
   return (
     <section>
       <form className="flex flex-col">
@@ -46,7 +48,7 @@ export default function NewOotd() {
           {file && (
             <img
               className="w-40 mx-auto mb-5"
-              src={URL.createObjectURL(file)}
+              src={file ? URL.createObjectURL(file) : location.state.imgUrl}
               alt=""
             />
           )}

@@ -15,7 +15,8 @@ export default function OotdCard({ ootd, onDelete }) {
     deleteOOTD(id).then(onDelete(id));
   };
   const handleClickUpdate = (ootd) => {
-    navigation("/ootd/update", { state: ootd });
+     navigation({ to: "/newootd", {state: ootd} });
+
   };
   return (
     <section className="flex flex-col justify-center items-center   rounded-xl bg-color3 py-5 mb-3">

@@ -11,12 +11,7 @@ export default function OOTD() {
   };
   useEffect(() => {
     getOOTDs().then((res) => setOotds(res.data));
-  }, []);
-
-  const handledelete = (id) => {
-    setOotds((pre) => pre.filter((item) => item.id !== id));
-    console.log(ootds);
-  };
+  });
 
   return (
     <section className="flex flex-col items-center">
@@ -27,9 +22,8 @@ export default function OOTD() {
         NEW &nbsp; <HiPlusCircle />
       </button>
       <div className="bg-color4 p-3">
-        {ootds.map((item) => (
-          <OotdCard ootd={item} key={item.id} onDelete={handledelete} />
-        ))}
+        <OotdCard />
+        <OotdCard />
       </div>
     </section>
   );
