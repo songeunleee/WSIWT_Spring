@@ -19,7 +19,7 @@ import java.util.List;
 public class OOTDService {
 
     private final OOTDRepository ootdRepository;
-    private final UserRepository userRepository;
+
 
     public Long save(OOTD entity){
         //String url = "images/winter_hat.png";
