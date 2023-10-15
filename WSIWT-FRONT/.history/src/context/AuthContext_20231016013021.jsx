@@ -8,14 +8,16 @@ export function AuthContextProvider({ children }) {
   const [user, setUser] = useState();
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("USER"));
-
-    if (user && user !== null) {
+    console.log(name);
+    if (name && name !== null) {
       setUser(user);
     }
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user: user && user, signout }}>
+    <AuthContext.Provider
+      value={{ user: user && user, email: user && user.email, signout }}
+    >
       {children}
     </AuthContext.Provider>
   );

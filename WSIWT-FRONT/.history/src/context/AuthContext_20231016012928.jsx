@@ -7,15 +7,17 @@ const AuthContext = createContext();
 export function AuthContextProvider({ children }) {
   const [user, setUser] = useState();
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("USER"));
-
-    if (user && user !== null) {
-      setUser(user);
+    const name = JSON.parse(localStorage.getItem("USER"));
+    console.log(name);
+    if (name && name !== null) {
+      setUser({ name: name });
     }
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user: user && user, signout }}>
+    <AuthContext.Provider
+      value={{ user: user && user, email: user && user.email, signout }}
+    >
       {children}
     </AuthContext.Provider>
   );

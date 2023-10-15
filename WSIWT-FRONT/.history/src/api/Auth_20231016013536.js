@@ -13,6 +13,7 @@ export async function signin(userDto) {
     if (res.data.token) {
       localStorage.setItem("ACCESS_TOKEN", res.data.token);
       localStorage.setItem("USER", JSON.stringify(res.data));
+      console.log(res);
     }
     return res.data;
   });
