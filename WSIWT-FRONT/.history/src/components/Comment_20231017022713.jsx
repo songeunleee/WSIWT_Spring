@@ -2,14 +2,13 @@ import React, { Children, useState } from "react";
 import User from "./User";
 import { HiPencilSquare } from "react-icons/hi2";
 import { BsFillTrashFill } from "react-icons/bs";
-import { BsArrowReturnRight } from "react-icons/bs";
 import Input from "./Input";
 import NestedComment from "./NestedComment";
 import { useAuthContext } from "../context/AuthContext";
 import useOotd from "../hooks/useOotd";
 import { updateComment } from "../api/database";
 
-export default function Comment({ nested, comment, parentAuthor }) {
+export default function Comment({ comment }) {
   const { user } = useAuthContext();
   const { removeComment, editComment, addNestedComment } = useOotd();
   const [showInput, setShowInput] = useState(false);
@@ -43,23 +42,15 @@ export default function Comment({ nested, comment, parentAuthor }) {
   const handleNestedCommentAdd = (input) => {
     addNestedComment.mutate({
       ootdId: comment.ootdId,
-      commentSaveDto: { content: input, author: user.username },
+      commentSaveDto: { content: input },
       id: comment.id,
     });
   };
 
   return (
-    <section className=" border-color ">
-      <div
-        className={`flex items-center justify-between w-full gap-2 py-1.5 p-1 px-3   ${
-          nested && `bg-color1`
-        }`}
-      >
-        {nested && <BsArrowReturnRight />}
+    <section className="border-b border-color1 rounded ">
+      <div className="flex items-center justify-between w-full gap-2  p-1 px-3">
         <User user={{ picture: "images/coat.png", username: comment.author }} />
-        {nested && (
-          <div className="font-bold text-stone-700">@{parentAuthor}</div>
-        )}
         <div className="font flex-1" onClick={handleClick}>
           {!edit ? (
             comment.content
@@ -80,12 +71,15 @@ export default function Comment({ nested, comment, parentAuthor }) {
         )}
       </div>
       {showInput && (
-        <Input nested={comment.author} onClick={handleNestedCommentAdd} />
+        <Input
+          nested
+          input={`@${comment.author}`}
+          onClick={handleNestedCommentAdd}
+        />
       )}
       {comment.child.length > 0 &&
         comment.child.map((child) => (
-          <Comment
-            nested
+          <NestedComment
             comment={child}
             key={child.id}
             parentAuthor={comment.author}

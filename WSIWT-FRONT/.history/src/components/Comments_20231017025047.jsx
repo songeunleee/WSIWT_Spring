@@ -19,7 +19,7 @@ export default function Comments({ ootdId, comments }) {
   };
   console.log(comments);
   return (
-    <div className="bg-color5 w-11/12 rounded-xl mt-4 pt-1 pb-2">
+    <div className="bg-color5 w-11/12 rounded-xl mt-4 pb-2">
       <Input onClick={handleClick} />
       {comments.map((comment) => (
         <Comment comment={comment} key={comment.id} />

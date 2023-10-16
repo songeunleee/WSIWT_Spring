@@ -30,6 +30,6 @@ export function deleteComment(id) {
 }
 
 export function postNestedComment(ootdId, id, commentSaveDto) {
-  console.log(`/api/v1/${ootdId}/comment/${id}`, commentSaveDto);
+  console.log(`/api/v1/${ootdId}/comment/${id}`);
   return call(`/api/v1/${ootdId}/comment/${id}`, "POST", commentSaveDto);
 }

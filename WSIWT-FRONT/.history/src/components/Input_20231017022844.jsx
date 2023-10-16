@@ -6,11 +6,7 @@ export default function Input({ nested, onClick, input }) {
   return (
     <div>
       <form className="flex bg-color2 rounded-xl m-2 w-auto" action="">
-        {nested && (
-          <div className="font-bold flex justify-center items-center ml-3 mr-2">
-            @{nested}
-          </div>
-        )}
+        {nested && <div className="font-bold">@{input}</div>}
         <input
           className="bg-transparent w-full outline-none p-2"
           ref={inputRef}

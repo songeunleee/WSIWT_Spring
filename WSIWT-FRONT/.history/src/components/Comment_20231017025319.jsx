@@ -51,7 +51,7 @@ export default function Comment({ nested, comment, parentAuthor }) {
   return (
     <section className=" border-color ">
       <div
-        className={`flex items-center justify-between w-full gap-2 py-1.5 p-1 px-3   ${
+        className={`flex items-center justify-between w-full gap-2  p-1 px-3 pt-1  ${
           nested && `bg-color1`
         }`}
       >

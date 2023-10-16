@@ -7,9 +7,8 @@ import { useAuthContext } from "../context/AuthContext";
 
 export default function NestedComment({ comment, parentAuthor }) {
   const { user } = useAuthContext();
-
   return (
-    <section className="flex items-center  w-full gap-2 rounded p-1 px-3 bg-color">
+    <section className="flex items-center  w-full gap-2 rounded p-1 px-3 bg-color1">
       <BsArrowReturnRight />
       <User user={{ photoURL: "images/coat.png", username: comment.author }} />
       <div className="font-bold text-stone-700">@{parentAuthor}</div>

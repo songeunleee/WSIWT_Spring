@@ -8,8 +8,29 @@ import { useAuthContext } from "../context/AuthContext";
 export default function NestedComment({ comment, parentAuthor }) {
   const { user } = useAuthContext();
 
+  const handleClickDelete = (id) => {
+    removeComment.mutate(id);
+  };
+
+  const handleClickUpdate = () => {
+    setEdit((pre) => !pre);
+  };
+
+  const handleSubmitUpdate = (input) => {
+    editComment.mutate(
+      {
+        id: comment.id,
+        commentUpdateDto: { content: input },
+      },
+      {
+        onSuccess: () => {
+          setEdit(false);
+        },
+      }
+    );
+  };
   return (
-    <section className="flex items-center  w-full gap-2 rounded p-1 px-3 bg-color">
+    <section className="flex items-center  w-full gap-2 rounded p-1 px-3 bg-color3">
       <BsArrowReturnRight />
       <User user={{ photoURL: "images/coat.png", username: comment.author }} />
       <div className="font-bold text-stone-700">@{parentAuthor}</div>

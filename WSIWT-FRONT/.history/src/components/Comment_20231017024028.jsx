@@ -49,12 +49,8 @@ export default function Comment({ nested, comment, parentAuthor }) {
   };
 
   return (
-    <section className=" border-color ">
-      <div
-        className={`flex items-center justify-between w-full gap-2 py-1.5 p-1 px-3   ${
-          nested && `bg-color1`
-        }`}
-      >
+    <section className="border-b border-color1">
+      <div className="flex items-center justify-between w-full gap-2  p-1 px-3">
         {nested && <BsArrowReturnRight />}
         <User user={{ picture: "images/coat.png", username: comment.author }} />
         {nested && (
@@ -84,7 +80,7 @@ export default function Comment({ nested, comment, parentAuthor }) {
       )}
       {comment.child.length > 0 &&
         comment.child.map((child) => (
-          <Comment
+          <NestedComment
             nested
             comment={child}
             key={child.id}

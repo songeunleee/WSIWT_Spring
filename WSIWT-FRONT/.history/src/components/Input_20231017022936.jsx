@@ -8,7 +8,7 @@ export default function Input({ nested, onClick, input }) {
       <form className="flex bg-color2 rounded-xl m-2 w-auto" action="">
         {nested && (
           <div className="font-bold flex justify-center items-center ml-3 mr-2">
-            @{nested}
+            {input}
           </div>
         )}
         <input
