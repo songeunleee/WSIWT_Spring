@@ -29,7 +29,7 @@ public class OOTDResponseDto {
         this.imgUrl = ootd.getUrl();
         this.createdAt = ootd.getCreatedDate();
         this.updatedAt = ootd.getModifiedDate();
-        this.comments = ootd.getComments().stream().map(CommentResponseDto::new)
+        this.comments = ootd.getComments().stream().filter(item->item.getDepth() == 0L).map(CommentResponseDto::new)
                 .collect(Collectors.toList());;
 
     }

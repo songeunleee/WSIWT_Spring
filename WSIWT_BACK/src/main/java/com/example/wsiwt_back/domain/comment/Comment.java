@@ -10,6 +10,8 @@ import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
@@ -21,7 +23,6 @@ public class Comment  extends BaseTimeEntity {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid",strategy = "uuid")
-
     private String id;
 
 
@@ -38,13 +39,28 @@ public class Comment  extends BaseTimeEntity {
 
     private String userId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_id")
+    private Comment parent;
+
+    private Long depth;
+
+    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true)
+    @JsonIgnore
+    private List<Comment> child = new ArrayList<>();
+
+
     @Builder
-    public Comment(String id,  String content, String author, String userId, OOTD ootd){
+    public Comment(String id,  String content, String author, String userId, OOTD ootd, Comment parent, Long depth,List<Comment> child){
         this.id = id;
         this.content = content;
         this.author = author;
         this.userId = userId;
         this.ootd = ootd;
+        this.parent = parent;
+        this.depth = depth;
+        this.child = child;
     }
 
     public void update(String content){

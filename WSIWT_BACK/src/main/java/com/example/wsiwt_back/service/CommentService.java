@@ -19,17 +19,16 @@ import java.util.List;
 public class CommentService {
     private final CommentRepository commentRepository;
 
-    public String save(Comment entity){
-        return commentRepository.save(entity).getId();
+    public Comment save(Comment entity){
+
+
+        return commentRepository.save(entity);
     }
 
     public Comment findById(String id)
     {return  commentRepository.findById(id)
             .orElseThrow(()->new IllegalArgumentException(" not exist : " + id)); }
 
-//    public List<Comment> findAllByOotdId(){
-//        return commentRepository
-//    }
 
     public void delete(String id,String userId){
 
