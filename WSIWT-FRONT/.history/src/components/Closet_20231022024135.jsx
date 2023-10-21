@@ -7,6 +7,7 @@ import ClosetItem from "./ClosetItem";
 import { HiPlusCircle } from "react-icons/hi";
 import useCloset from "../hooks/useCloset";
 import Loading from "./Loading";
+import { getClothes } from "../api/database";
 
 export default function Closet({ category, temperature }) {
   const { user, login } = useAuthContext();
@@ -17,8 +18,6 @@ export default function Closet({ category, temperature }) {
   } = useCloset();
 
   let closetList = myClothes && myClothes;
-
-  console.log(closetList);
 
   if (temperature) {
     closetList =

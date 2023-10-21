@@ -1,5 +1,9 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { deleteClothes, getClothes, postClothes } from "../api/database";
+import {
+  addNewClothes,
+  getClothes,
+  removeClothes as remove,
+} from "../api/database";
 import { useAuthContext } from "../context/AuthContext";
 
 export default function useCloset() {
@@ -7,17 +11,18 @@ export default function useCloset() {
   const queryclient = useQueryClient();
 
   const closetQuery = useQuery(
-    ["myCloset"],
-    () => getClothes().then((res) => res.data),
-
+    ["myCloset", uid],
+    () => getClothes(),
+    { enabled: !!uid },
     { staleTime: 1000 * 60 }
   );
 
-  const addClothes = useMutation((newClothes) => postClothes(newClothes), {
-    onSuccess: () => queryclient.invalidateQueries(["myCloset"]),
-  });
+  const addClothes = useMutation(
+    ({ newClothes, url }) => addNewClothes(newClothes, url, uid),
+    { onSuccess: () => queryclient.invalidateQueries(["myCloset", uid]) }
+  );
 
-  const removeClothes = useMutation((id) => deleteClothes(id), {
+  const removeClothes = useMutation((item) => remove(uid, item), {
     onSuccess: () => {
       queryclient.invalidateQueries(["myCloset", uid]);
     },

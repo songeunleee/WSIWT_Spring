@@ -43,6 +43,5 @@ export function getClothes() {
 }
 
 export function deleteClothes(id) {
-  console.log(id);
-  return call(`/api/v1/clothes/${id}`, "DELETE");
+  return call(`/api/v1/clothes/${id}`);
 }

@@ -63,8 +63,6 @@ export default function NewClothes() {
         type: setType(division.middle, division.sub),
         category: division.category,
         name: nameRef.current.value,
-        middle: division.middle,
-        sub: division.sub,
       };
       file
         ? uploadImage(file).then((url) => {

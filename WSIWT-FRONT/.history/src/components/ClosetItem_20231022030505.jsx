@@ -7,7 +7,7 @@ export default function ClosetItem({ item }) {
   const { removeClothes } = useCloset();
   const location = useLocation();
   const isMyCloset = location.pathname === "/mycloset" ? true : false;
-  const handleClick = (id) => removeClothes.mutate(id);
+  const handleClick = (item) => removeClothes.mutate(item);
 
   return (
     <section className="flex flex-col text-gray-800 bg-color2 rounded-3xl">
@@ -27,7 +27,7 @@ export default function ClosetItem({ item }) {
         </div>
         {isMyCloset && (
           <div
-            onClick={() => handleClick(item.id)}
+            onClick={() => handleClick(item)}
             className=" mr-1 justify-self-start hover:ease-in duration-200 hover:scale-110 cursor-pointer"
           >
             <TiDelete />

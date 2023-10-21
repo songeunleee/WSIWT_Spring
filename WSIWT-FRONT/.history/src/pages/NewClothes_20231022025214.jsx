@@ -63,8 +63,6 @@ export default function NewClothes() {
         type: setType(division.middle, division.sub),
         category: division.category,
         name: nameRef.current.value,
-        middle: division.middle,
-        sub: division.sub,
       };
       file
         ? uploadImage(file).then((url) => {
@@ -83,8 +81,8 @@ export default function NewClothes() {
         : addClothes.mutate(
             {
               ...newClothes,
-              url: `../images/${newClothes.sub ? newClothes.sub + "_" : ""}${
-                newClothes.middle
+              url: `../images/${clothes.sub ? clothes.sub + "_" : ""}${
+                clothes.middle
               }.png`,
             },
             {

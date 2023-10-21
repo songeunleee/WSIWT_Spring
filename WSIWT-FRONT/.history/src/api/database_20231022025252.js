@@ -41,8 +41,3 @@ export function postClothes(clothesSaveDto) {
 export function getClothes() {
   return call("/api/v1/clothes");
 }
-
-export function deleteClothes(id) {
-  console.log(id);
-  return call(`/api/v1/clothes/${id}`, "DELETE");
-}

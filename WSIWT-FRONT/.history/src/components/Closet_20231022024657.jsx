@@ -18,8 +18,6 @@ export default function Closet({ category, temperature }) {
 
   let closetList = myClothes && myClothes;
 
-  console.log(closetList);
-
   if (temperature) {
     closetList =
       myClothes &&

@@ -16,9 +16,11 @@ export default function Closet({ category, temperature }) {
     closetQuery: { data: myClothes, isLoading },
   } = useCloset();
 
-  let closetList = myClothes && myClothes;
+  useEffect(() => {
+    getClothes().then(console.log);
+  });
 
-  console.log(closetList);
+  let closetList = myClothes && myClothes;
 
   if (temperature) {
     closetList =

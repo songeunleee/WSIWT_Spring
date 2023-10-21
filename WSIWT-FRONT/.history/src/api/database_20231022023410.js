@@ -34,15 +34,9 @@ export function postNestedComment(ootdId, id, commentSaveDto) {
 }
 
 export function postClothes(clothesSaveDto) {
-  console.log(clothesSaveDto);
-  return call("/api/v1/clothes", "POST", clothesSaveDto);
+  return call("api/v1/clothes", clothesSaveDto);
 }
 
 export function getClothes() {
-  return call("/api/v1/clothes");
-}
-
-export function deleteClothes(id) {
-  console.log(id);
-  return call(`/api/v1/clothes/${id}`, "DELETE");
+  return call("api/v1/clothes");
 }
