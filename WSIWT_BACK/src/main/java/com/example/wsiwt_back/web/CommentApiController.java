@@ -35,7 +35,6 @@ public class CommentApiController {
                 comment = Comment.builder().userId(userId).author(requestDto.getAuthor()).content(requestDto.getContent()).ootd(ootd).depth(depth).parent(parentComment).build();
             }
 
-
         return  ResponseEntity.status(HttpStatus.CREATED).body(commentService.save(comment));
     }
 

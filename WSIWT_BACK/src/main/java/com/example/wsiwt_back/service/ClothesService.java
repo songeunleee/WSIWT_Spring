@@ -6,6 +6,8 @@ import com.example.wsiwt_back.web.dto.clothes.ClothesSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 
 @Service
@@ -13,11 +15,20 @@ public class ClothesService{
 
     private final ClothesRepository clothesRepository;
 
-    public Clothes save(ClothesSaveRequestDto requestDto){
+    public Clothes save(Clothes clothes){
         String url = "dd";
-        return clothesRepository.save(requestDto.toEntity(url));
+
+        return clothesRepository.save(clothes);
     }
 
+    public List<Clothes>  FindByUserId(String userId){
+        return clothesRepository.findByUserId(userId);
+    }
+
+    public void DeleteById(Long id){
+
+        clothesRepository.deleteById(id);
+    }
 
 
 }

@@ -27,17 +27,17 @@ public class Clothes extends BaseTimeEntity {
 
     private String url;
 
-    private String author;
+    private String userId;
 
     @ElementCollection
     private List<Integer> type;
 
     @Builder
-    public Clothes(String name, String category, String url, String author, List<Integer> type){
+    public Clothes(String name, String category, String url, String userId, List<Integer> type){
         this.name = name;
         this.category = category;
         this.url = url;
-        this.author = author;
+        this.userId = userId;
         this.type = type;
     }
 
