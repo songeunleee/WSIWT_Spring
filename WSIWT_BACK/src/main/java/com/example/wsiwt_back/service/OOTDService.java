@@ -2,8 +2,6 @@ package com.example.wsiwt_back.service;
 
 import com.example.wsiwt_back.domain.ootd.OOTD;
 import com.example.wsiwt_back.domain.ootd.OOTDRepository;
-import com.example.wsiwt_back.domain.user.UserRepository;
-import com.example.wsiwt_back.web.dto.ootd.OOTDSaveRequestDto;
 import com.example.wsiwt_back.web.dto.ootd.OOTDUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

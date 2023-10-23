@@ -1,17 +1,14 @@
 package com.example.wsiwt_back.web;
 
 import com.example.wsiwt_back.domain.clothes.Clothes;
-import com.example.wsiwt_back.domain.ootd.OOTD;
 import com.example.wsiwt_back.service.ClothesService;
 import com.example.wsiwt_back.web.dto.ResponseDto;
 import com.example.wsiwt_back.web.dto.clothes.ClothesResponseDto;
 import com.example.wsiwt_back.web.dto.clothes.ClothesSaveRequestDto;
-import com.example.wsiwt_back.web.dto.ootd.OOTDSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,7 +45,6 @@ public class ClothesApiController {
 
             return ResponseEntity.badRequest().body(responseDto);
         }
-
 
     }
 

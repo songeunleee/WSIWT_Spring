@@ -2,15 +2,11 @@ package com.example.wsiwt_back.service;
 
 import com.example.wsiwt_back.domain.comment.Comment;
 import com.example.wsiwt_back.domain.comment.CommentRepository;
-import com.example.wsiwt_back.domain.ootd.OOTD;
 import com.example.wsiwt_back.web.dto.comment.CommentUpdateRequestDto;
-import com.example.wsiwt_back.web.dto.ootd.OOTDUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @RequiredArgsConstructor
 @Slf4j
