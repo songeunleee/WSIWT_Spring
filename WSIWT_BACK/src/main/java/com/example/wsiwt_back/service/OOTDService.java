@@ -5,6 +5,8 @@ import com.example.wsiwt_back.domain.ootd.OOTDRepository;
 import com.example.wsiwt_back.web.dto.ootd.OOTDUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -57,6 +59,10 @@ public class OOTDService {
 
         ootd.update(requestDto.getContent(), requestDto.getUrl());
         return ootd;
+    }
+
+    public Page<OOTD> findOOTDAsPagenation(Pageable pageable){
+        return ootdRepository.findAll(pageable);
     }
 
 

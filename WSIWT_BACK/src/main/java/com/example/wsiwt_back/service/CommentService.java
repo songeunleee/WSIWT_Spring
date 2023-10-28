@@ -2,9 +2,12 @@ package com.example.wsiwt_back.service;
 
 import com.example.wsiwt_back.domain.comment.Comment;
 import com.example.wsiwt_back.domain.comment.CommentRepository;
+import com.example.wsiwt_back.domain.ootd.OOTD;
 import com.example.wsiwt_back.web.dto.comment.CommentUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -54,5 +57,7 @@ public class CommentService {
         comment.update(requestDto.getContent());
         return comment;
     }
+
+
 
 }
