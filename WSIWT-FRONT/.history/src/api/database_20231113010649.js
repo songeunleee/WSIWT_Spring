@@ -2,7 +2,6 @@ import axios from "axios";
 import { call } from "./Auth";
 
 export async function getOOTDs(pageDto) {
-  console.log(pageDto);
   return call("/ootds", "POST", pageDto);
 }
 

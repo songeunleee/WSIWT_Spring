@@ -72,6 +72,7 @@ export default function useOotd(pageDto) {
 
   const nextPage = useMutation(
     (pageDto) => {
+      console.log(pageDto);
       getOOTDs(pageDto);
     },
     {

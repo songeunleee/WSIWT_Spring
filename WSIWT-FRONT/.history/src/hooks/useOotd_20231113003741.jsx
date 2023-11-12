@@ -13,7 +13,7 @@ import {
 
 export default function useOotd(pageDto) {
   const queryclient = useQueryClient();
-
+  console.log(pageDto);
   const ootdQuery = useQuery(
     ["myOotd"],
     () => getOOTDs(pageDto).then((res) => res.data),
@@ -22,14 +22,9 @@ export default function useOotd(pageDto) {
     }
   );
 
-  const addOotd = useMutation(
-    (ootdSaveDto) => {
-      postOOTD(ootdSaveDto);
-    },
-    {
-      onSuccess: () => queryclient.invalidateQueries(["myOotd"]),
-    }
-  );
+  const addOotd = useMutation(({ ootdSaveDto }) => postOOTD(ootdSaveDto), {
+    onSuccess: () => queryclient.invalidateQueries(["myOotd"]),
+  });
 
   const removeOotd = useMutation((id) => deleteOOTD(id), {
     onSuccess: () => {
@@ -70,15 +65,6 @@ export default function useOotd(pageDto) {
     }
   );
 
-  const nextPage = useMutation(
-    (pageDto) => {
-      getOOTDs(pageDto);
-    },
-    {
-      onSuccess: () => queryclient.invalidateQueries(["myOotd"]),
-    }
-  );
-
   return {
     ootdQuery,
     addOotd,
@@ -88,6 +74,5 @@ export default function useOotd(pageDto) {
     removeComment,
     editComment,
     addNestedComment,
-    nextPage,
   };
 }

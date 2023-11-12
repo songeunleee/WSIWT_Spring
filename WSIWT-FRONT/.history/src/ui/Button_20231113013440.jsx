@@ -6,9 +6,7 @@ export default function Button({ invisible, text, onClick, color }) {
       onClick={onClick}
       className={`bg-${
         color ? color : "color1"
-      } text-white rounded-sm hover:brightness-110 p-2 px-4 text-grey ${
-        invisible && "invisible"
-      }`}
+      } text-white rounded-sm hover:brightness-110 p-2 px-4 text-grey invisible`}
     >
       {text}
     </button>

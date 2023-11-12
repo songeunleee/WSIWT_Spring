@@ -11,25 +11,20 @@ import {
   updateOOTD,
 } from "../api/database";
 
-export default function useOotd(pageDto) {
+export default function useOotd({ page }) {
   const queryclient = useQueryClient();
-
+  console.log(page);
   const ootdQuery = useQuery(
-    ["myOotd"],
+    ["myOotd", page],
     () => getOOTDs(pageDto).then((res) => res.data),
     {
       staleTime: 1000 * 60,
     }
   );
 
-  const addOotd = useMutation(
-    (ootdSaveDto) => {
-      postOOTD(ootdSaveDto);
-    },
-    {
-      onSuccess: () => queryclient.invalidateQueries(["myOotd"]),
-    }
-  );
+  const addOotd = useMutation(({ ootdSaveDto }) => postOOTD(ootdSaveDto), {
+    onSuccess: () => queryclient.invalidateQueries(["myOotd"]),
+  });
 
   const removeOotd = useMutation((id) => deleteOOTD(id), {
     onSuccess: () => {
@@ -70,15 +65,6 @@ export default function useOotd(pageDto) {
     }
   );
 
-  const nextPage = useMutation(
-    (pageDto) => {
-      getOOTDs(pageDto);
-    },
-    {
-      onSuccess: () => queryclient.invalidateQueries(["myOotd"]),
-    }
-  );
-
   return {
     ootdQuery,
     addOotd,
@@ -88,6 +74,5 @@ export default function useOotd(pageDto) {
     removeComment,
     editComment,
     addNestedComment,
-    nextPage,
   };
 }

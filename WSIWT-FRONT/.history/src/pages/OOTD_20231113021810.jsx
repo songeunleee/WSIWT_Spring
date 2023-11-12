@@ -12,9 +12,9 @@ export default function OOTD() {
   const target = useRef(null);
   const [page, setPage] = useState(0);
 
-  const { data: myOotd, isLoading } = useQuery(
+  const { data: myOotd } = useQuery(
     ["myOotd", page],
-    () => getOOTDs({ page }).then((res) => res.data),
+    () => getOOTDs(page).then((res) => res.data),
     {
       staleTime: 1000 * 60,
     }

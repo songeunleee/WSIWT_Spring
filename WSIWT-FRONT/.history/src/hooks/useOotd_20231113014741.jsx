@@ -70,14 +70,9 @@ export default function useOotd(pageDto) {
     }
   );
 
-  const nextPage = useMutation(
-    (pageDto) => {
-      getOOTDs(pageDto);
-    },
-    {
-      onSuccess: () => queryclient.invalidateQueries(["myOotd"]),
-    }
-  );
+  const nextPage = useMutation(({ pageDto }) => getOOTDs(pageDto), {
+    onSuccess: () => queryclient.invalidateQueries(["myOotd"]),
+  });
 
   return {
     ootdQuery,
@@ -88,6 +83,5 @@ export default function useOotd(pageDto) {
     removeComment,
     editComment,
     addNestedComment,
-    nextPage,
   };
 }

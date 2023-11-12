@@ -6,24 +6,18 @@ import { getOOTDs } from "../api/database";
 import useOotd from "../hooks/useOotd";
 import Loading from "../components/Loading";
 import Button from "../ui/Button";
-import { useQuery } from "@tanstack/react-query";
 export default function OOTD() {
   const navigate = useNavigate();
   const target = useRef(null);
   const [page, setPage] = useState(0);
 
-  const { data: myOotd, isLoading } = useQuery(
-    ["myOotd", page],
-    () => getOOTDs({ page }).then((res) => res.data),
-    {
-      staleTime: 1000 * 60,
-    }
-  );
+  const {
+    ootdQuery: { data: myOotd, isLoading },
+  } = useOotd({ page });
 
   const handleClick = () => {
     navigate("new");
   };
-
   const handleNextPage = () => {
     setPage((pre) => pre + 1);
   };
@@ -47,13 +41,11 @@ export default function OOTD() {
               .reverse()}
           <div className="flex justify-between">
             {myOotd && myOotd.page.hasPrevious ? (
-              <Button text="◀" onClick={handlePrePage}></Button>
+              <Button text="◀"></Button>
             ) : (
               <Button invisible text="◀"></Button>
             )}
-            {myOotd && myOotd.page.hasNext && (
-              <Button onClick={handleNextPage} text="▶"></Button>
-            )}
+            {myOotd && myOotd.page.hasNext && <Button text="▶"></Button>}
           </div>
         </div>
       ) : (

@@ -6,31 +6,19 @@ import { getOOTDs } from "../api/database";
 import useOotd from "../hooks/useOotd";
 import Loading from "../components/Loading";
 import Button from "../ui/Button";
-import { useQuery } from "@tanstack/react-query";
 export default function OOTD() {
   const navigate = useNavigate();
   const target = useRef(null);
   const [page, setPage] = useState(0);
 
-  const { data: myOotd, isLoading } = useQuery(
-    ["myOotd", page],
-    () => getOOTDs({ page }).then((res) => res.data),
-    {
-      staleTime: 1000 * 60,
-    }
-  );
+  const {
+    ootdQuery: { data: myOotd, isLoading },
+  } = useOotd({ page });
 
   const handleClick = () => {
     navigate("new");
   };
-
-  const handleNextPage = () => {
-    setPage((pre) => pre + 1);
-  };
-
-  const handlePrePage = () => {
-    setPage((pre) => pre - 1);
-  };
+  console.log(myOotd && myOotd.page);
   return (
     <section className="flex flex-col items-center" ref={target}>
       <button
@@ -46,14 +34,8 @@ export default function OOTD() {
               .map((item) => <OotdCard ootd={item} key={item.id} />)
               .reverse()}
           <div className="flex justify-between">
-            {myOotd && myOotd.page.hasPrevious ? (
-              <Button text="◀" onClick={handlePrePage}></Button>
-            ) : (
-              <Button invisible text="◀"></Button>
-            )}
-            {myOotd && myOotd.page.hasNext && (
-              <Button onClick={handleNextPage} text="▶"></Button>
-            )}
+            <Button text="◀"></Button>
+            {myOotd && myOotd.page.hasNext && <Button text="▶"></Button>}
           </div>
         </div>
       ) : (

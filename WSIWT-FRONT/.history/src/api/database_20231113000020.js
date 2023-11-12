@@ -2,12 +2,10 @@ import axios from "axios";
 import { call } from "./Auth";
 
 export async function getOOTDs(pageDto) {
-  console.log(pageDto);
   return call("/ootds", "POST", pageDto);
 }
 
 export function postOOTD(saveDto) {
-  console.log(saveDto);
   return call("/api/v1/ootd", "POST", saveDto);
 }
 
