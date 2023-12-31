@@ -45,7 +45,7 @@ public class OOTDApiController {
         Page<OOTD> page = ootdService.findOOTDAsPagenation(pageable);
         List<OOTDResponseDto> ootds = page
                .stream()
-                .map(item-> new OOTDResponseDto(item))
+                .map(item-> new OOTDResponseDto(item,page))
                 .collect(Collectors.toList());
 
         Map<String,Object> result = new HashMap<>();

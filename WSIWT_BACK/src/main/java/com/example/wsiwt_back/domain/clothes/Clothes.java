@@ -41,4 +41,5 @@ public class Clothes extends BaseTimeEntity {
         this.type = type;
     }
 
+
 }
