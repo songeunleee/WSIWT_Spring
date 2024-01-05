@@ -27,7 +27,6 @@ export function signout() {
 export function call(api, method, request) {
   let headers = { "Content-Type": "application/json" };
 
-  // 로컬 스토리지에서 ACCESS TOKEN 가져오기
   const accessToken = localStorage.getItem("ACCESS_TOKEN");
   if (accessToken && accessToken !== null) {
     headers = {
@@ -36,7 +35,6 @@ export function call(api, method, request) {
     };
   }
 
-  //console.log(options.headers.get("Authorization"));
   return axios(API_BASE_URL + api, {
     method: method,
     data: request,

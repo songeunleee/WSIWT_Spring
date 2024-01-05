@@ -14,14 +14,6 @@ import {
 export default function useOotd(pageDto) {
   const queryclient = useQueryClient();
 
-  const ootdQuery = useQuery(
-    ["myOotd"],
-    () => getOOTDs(pageDto).then((res) => res.data),
-    {
-      staleTime: 1000 * 60,
-    }
-  );
-
   const addOotd = useMutation(
     (ootdSaveDto) => {
       postOOTD(ootdSaveDto);
