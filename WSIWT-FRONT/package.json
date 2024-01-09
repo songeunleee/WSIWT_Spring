@@ -20,9 +20,6 @@
     "swiper": "^8.4.5",
     "web-vitals": "^2.1.0"
   },
-  "engines": {
-    "node": "19.0.0"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
