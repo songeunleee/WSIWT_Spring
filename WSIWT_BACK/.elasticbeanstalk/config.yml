@@ -1,0 +1,35 @@
+branch-defaults:
+  default:
+    environment: WSIWT-BACK-API
+    group_suffix: null
+deploy:
+  application_name: WSIWT-BACK
+  artifact: C:\Users\songeun\Desktop\todo-application-revision2-main\6.3-Backend_Deployment_With_AWS_ElasticBeanstalk\demo\build\libs\demo-0.0.1-SNAPSHOT.jar
+  branch: null
+  default_ec2_keyname: null
+  default_platform: Corretto 11 running on 64bit Amazon Linux 2
+  default_region: us-west-2
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  repository: null
+  sc: null
+  workspace_type: Application
+environment-defaults:
+  WSIWT-BACK:
+    branch: null
+    repository: null
+global:
+  application_name: WSIWT-BACK
+  default_ec2_keyname: null
+  default_platform: Corretto 11 running on 64bit Amazon Linux 2
+  default_region: us-west-2
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  sc: null
+  workspace_type: Application
