@@ -3,7 +3,7 @@ import OotdCard from "../components/OotdCard";
 import { HiPlusCircle } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { getOOTDs } from "../api/database";
-
+import useOotd from "../hooks/useOotd";
 import Loading from "../components/Loading";
 import Button from "../ui/Button";
 import { useQuery } from "@tanstack/react-query";
@@ -14,7 +14,10 @@ export default function OOTD() {
 
   const { data: myOotd, isLoading } = useQuery(
     ["myOotd", page],
-    () => getOOTDs({ page }).then((res) => res.data),
+    (key) => {
+      console.log(key.queryKey[1]);
+      return getOOTDs({ page: key.queryKey[1] }).then((res) => res.data);
+    },
     {
       staleTime: 1000 * 60,
     }

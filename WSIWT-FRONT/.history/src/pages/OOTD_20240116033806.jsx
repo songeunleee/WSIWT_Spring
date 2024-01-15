@@ -3,7 +3,7 @@ import OotdCard from "../components/OotdCard";
 import { HiPlusCircle } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { getOOTDs } from "../api/database";
-
+import useOotd from "../hooks/useOotd";
 import Loading from "../components/Loading";
 import Button from "../ui/Button";
 import { useQuery } from "@tanstack/react-query";
@@ -11,6 +11,8 @@ export default function OOTD() {
   const navigate = useNavigate();
   const target = useRef(null);
   const [page, setPage] = useState(0);
+
+  console.log(page);
 
   const { data: myOotd, isLoading } = useQuery(
     ["myOotd", page],

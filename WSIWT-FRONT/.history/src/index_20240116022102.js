@@ -54,11 +54,7 @@ const router = createBrowserRouter([
       {
         path: "ootd/new",
 
-        element: (
-          <ProtectedRoute>
-            <NewOotd />
-          </ProtectedRoute>
-        ),
+        element: <NewOotd />,
       },
       {
         path: "ootd/update",

@@ -6,5 +6,7 @@ import { useAuthContext } from "../context/AuthContext";
 export default function ProtectedRoute({ children }) {
   const { user } = useAuthContext();
 
+  console.log(user);
+
   return user !== undefined ? children : <Navigate to="/" />;
 }

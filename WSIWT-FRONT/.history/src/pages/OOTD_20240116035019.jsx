@@ -3,7 +3,7 @@ import OotdCard from "../components/OotdCard";
 import { HiPlusCircle } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { getOOTDs } from "../api/database";
-
+import useOotd from "../hooks/useOotd";
 import Loading from "../components/Loading";
 import Button from "../ui/Button";
 import { useQuery } from "@tanstack/react-query";

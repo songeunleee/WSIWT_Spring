@@ -11,7 +11,7 @@ import {
   updateOOTD,
 } from "../api/database";
 
-export default function useOotd() {
+export default function useOotd(pageDto) {
   const queryclient = useQueryClient();
 
   const addOotd = useMutation(
@@ -72,6 +72,7 @@ export default function useOotd() {
   );
 
   return {
+    ootdQuery,
     addOotd,
     removeOotd,
     updateOotd,
