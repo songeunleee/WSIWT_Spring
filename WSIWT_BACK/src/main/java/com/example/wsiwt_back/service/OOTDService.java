@@ -38,8 +38,8 @@ public class OOTDService {
 
         OOTD ootd = ootdRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
         System.out.println(userId);
-        System.out.println(ootd.getUserId());
-        if(!ootd.getUserId().equals(userId)  ){
+        System.out.println(ootd.getUser());
+        if(!ootd.getUser().getId().equals(userId)  ){
             log.warn("글을 작성한 사람만 삭제할 수 있습니다.");
             throw new RuntimeException("글을 작성한 사람만 삭제할 수 있습니다.");
         }
@@ -52,7 +52,7 @@ public class OOTDService {
 
 
         OOTD ootd = ootdRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
-        if(!ootd.getUserId().equals(userId)  ){
+        if(!ootd.getUser().getId().equals(userId)  ){
             log.warn("글을 작성한 사람만 수정할 수 있습니다.");
             throw new RuntimeException("글을 작성한 사람만 수정할 수 있습니다.");
         }

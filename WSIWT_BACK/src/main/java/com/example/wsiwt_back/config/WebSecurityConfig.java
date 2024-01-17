@@ -23,7 +23,7 @@ public class WebSecurityConfig {
     @Bean
     public WebSecurityCustomizer configure(){
         return (web) -> web.ignoring()
-                 .requestMatchers(PathRequest.toH2Console())
+                .requestMatchers(PathRequest.toH2Console())
                 .antMatchers(String.valueOf(PathRequest.toH2Console()))
                 .antMatchers("/static/**");
     }

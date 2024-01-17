@@ -59,11 +59,11 @@ task('release') {
         }
         /* 결과 로깅을 위한 작업 */
         println "eb setenv SPRING_PROFILES_ACTIVE=prod :\n$stdout";
-//        exec {
-//            /* $eb deploy */eb
-//            commandLine 'eb', 'deploy'
-//            standardOutput = stdout
-//        }
+        exec {
+            /* $eb deploy */
+            commandLine 'eb', 'deploy'
+            standardOutput = stdout
+        }
         println "eb deploy :\n$stdout";
         println "Release succeeded."
     }

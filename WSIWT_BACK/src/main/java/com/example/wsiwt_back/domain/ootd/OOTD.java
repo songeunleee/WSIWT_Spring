@@ -3,6 +3,7 @@ package com.example.wsiwt_back.domain.ootd;
 import com.example.wsiwt_back.domain.BaseTimeEntity;
 import com.example.wsiwt_back.domain.comment.Comment;
 import com.example.wsiwt_back.domain.comment.CommentRepository;
+import com.example.wsiwt_back.domain.user.UserEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Getter;
@@ -35,7 +36,12 @@ public class OOTD extends BaseTimeEntity {
 
     private String author;
 
-    private String userId;
+    @JsonIgnore
+    @ManyToOne( fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
+
+
 
     @JsonIgnore
     @OneToMany(mappedBy = "ootd",fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
@@ -44,12 +50,12 @@ public class OOTD extends BaseTimeEntity {
 
 
     @Builder
-    public OOTD(Long id, String content, String author, String url, String userId,List<Comment> comments){
+    public OOTD(Long id, String content, String author, String url, UserEntity user,List<Comment> comments){
         this.id = id;
         this.content = content;
         this.author = author;
         this.url = url;
-        this.userId = userId;
+        this.user = user;
         this.comments = comments;
 
     }

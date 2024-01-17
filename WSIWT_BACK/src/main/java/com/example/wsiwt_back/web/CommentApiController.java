@@ -2,8 +2,10 @@ package com.example.wsiwt_back.web;
 
 import com.example.wsiwt_back.domain.comment.Comment;
 import com.example.wsiwt_back.domain.ootd.OOTD;
+import com.example.wsiwt_back.domain.user.UserEntity;
 import com.example.wsiwt_back.service.CommentService;
 import com.example.wsiwt_back.service.OOTDService;
+import com.example.wsiwt_back.service.UserService;
 import com.example.wsiwt_back.web.dto.ResponseDto;
 import com.example.wsiwt_back.web.dto.comment.CommentSaveRequestDto;
 import com.example.wsiwt_back.web.dto.comment.CommentUpdateRequestDto;
@@ -22,17 +24,19 @@ public class CommentApiController {
 
     private final CommentService commentService;
     private final OOTDService ootdService;
+    private final UserService userService;
 
     @PostMapping(value = {"/api/v1/{ootdId}/comment","/api/v1/{ootdId}/comment/{id}"})
     public ResponseEntity<?> save(@AuthenticationPrincipal String userId,@PathVariable Long ootdId,@PathVariable(required = false) String id, @RequestBody CommentSaveRequestDto requestDto){
             OOTD ootd = ootdService.findById(ootdId);
+            UserEntity user = userService.findById(userId);
             Comment comment;
             if(id == null){
-                 comment = Comment.builder().userId(userId).author(requestDto.getAuthor()).content(requestDto.getContent()).ootd(ootd).depth(0L).build();
+                 comment = Comment.builder().user(user).author(requestDto.getAuthor()).content(requestDto.getContent()).ootd(ootd).depth(0L).build();
             }else{
                 Comment parentComment = commentService.findById(id);
                 Long depth = parentComment.getDepth() + 1;
-                comment = Comment.builder().userId(userId).author(requestDto.getAuthor()).content(requestDto.getContent()).ootd(ootd).depth(depth).parent(parentComment).build();
+                comment = Comment.builder().user(user).author(requestDto.getAuthor()).content(requestDto.getContent()).ootd(ootd).depth(depth).parent(parentComment).build();
             }
 
         return  ResponseEntity.status(HttpStatus.CREATED).body(commentService.save(comment));

@@ -3,8 +3,10 @@ package com.example.wsiwt_back.web.dto.ootd;
 import com.example.wsiwt_back.domain.comment.Comment;
 import com.example.wsiwt_back.domain.comment.CommentRepository;
 import com.example.wsiwt_back.domain.ootd.OOTD;
+import com.example.wsiwt_back.domain.user.UserEntity;
 import com.example.wsiwt_back.web.dto.PageResponeDto;
 import com.example.wsiwt_back.web.dto.comment.CommentResponseDto;
+import com.example.wsiwt_back.web.dto.user.AuthorDto;
 import lombok.Getter;
 import org.springframework.data.domain.Page;
 
@@ -18,7 +20,7 @@ public class OOTDResponseDto {
 
     private Long id;
     private String content;
-    private String author;
+    private AuthorDto author;
     private String imgUrl;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -30,7 +32,7 @@ public class OOTDResponseDto {
     public OOTDResponseDto(OOTD ootd, Page page){
         this.id = ootd.getId();
         this.content = ootd.getContent();
-        this.author = ootd.getAuthor();
+        this.author = new AuthorDto(ootd.getUser());
         this.imgUrl = ootd.getUrl();
         this.createdAt = ootd.getCreatedDate();
         this.updatedAt = ootd.getModifiedDate();

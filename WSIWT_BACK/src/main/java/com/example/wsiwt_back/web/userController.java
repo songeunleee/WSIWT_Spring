@@ -37,6 +37,7 @@ public class userController {
 
             UserEntity user = UserEntity.builder()
                     .username(userDto.getUsername())
+                    .picture(userDto.getPicture())
                     .password(passwordEncoder.encode(userDto.getPassword()))
                     .build();
 
@@ -68,6 +69,7 @@ public class userController {
             final String token = tokenProvider.create(user);
             final UserDto responseUserDTO = UserDto.builder()
                     .username(user.getUsername())
+                    .picture(user.getPicture())
                     .id(user.getId())
                     .token(token)
                     .build();

@@ -1,6 +1,9 @@
 package com.example.wsiwt_back.web;
 
 import com.example.wsiwt_back.domain.ootd.OOTD;
+import com.example.wsiwt_back.domain.user.UserEntity;
+import com.example.wsiwt_back.domain.user.UserRepository;
+import com.example.wsiwt_back.service.UserService;
 import com.example.wsiwt_back.web.dto.PageRequestDto;
 import com.example.wsiwt_back.web.dto.PageResponeDto;
 import com.example.wsiwt_back.web.dto.ResponseDto;
@@ -29,11 +32,13 @@ import java.util.stream.Collectors;
 public class OOTDApiController {
 
     private final OOTDService ootdService;
+    private final UserService userService;
 
     @PostMapping("/api/v1/ootd")
     public ResponseEntity<Long> save(@AuthenticationPrincipal String userId, @RequestBody OOTDSaveRequestDto requestDto){
 
-        OOTD ootd = OOTD.builder().userId(userId).url(requestDto.getUrl()).author(requestDto.getAuthor()).content(requestDto.getContent()).build();
+        UserEntity user = userService.findById(userId);
+        OOTD ootd = OOTD.builder().user(user).url(requestDto.getUrl()).author(requestDto.getAuthor()).content(requestDto.getContent()).build();
 
         return  ResponseEntity.status(HttpStatus.CREATED).body(ootdService.save(ootd));
     }

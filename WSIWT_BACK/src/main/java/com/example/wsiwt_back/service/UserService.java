@@ -38,4 +38,8 @@ public class UserService {
         return null;
     }
 
+    public UserEntity findById(String userId){
+        return userRepository.findById(userId).orElseThrow(()->new IllegalArgumentException(" not exist : " + userId));
+    }
+
 }

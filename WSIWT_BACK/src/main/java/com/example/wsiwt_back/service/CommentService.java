@@ -33,8 +33,8 @@ public class CommentService {
 
         Comment comment = commentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 댓글이 없습니다. id="+id));
         System.out.println(userId);
-        System.out.println(comment.getUserId());
-        if(!comment.getUserId().equals(userId)  ){
+        System.out.println(comment.getUser().getId());
+        if(!comment.getUser().getId().equals(userId)  ){
             log.warn("댓글을 작성한 사람만 삭제할 수 있습니다.");
             throw new RuntimeException("댓글을 작성한 사람만 삭제할 수 있습니다.");
         }
@@ -48,8 +48,8 @@ public class CommentService {
 
         Comment comment = commentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 댓글이 없습니다. id="+id));
         System.out.println(userId);
-        System.out.println(comment.getUserId());
-        if(!comment.getUserId().equals(userId)  ){
+        System.out.println(comment.getUser().getId());
+        if(!comment.getUser().getId().equals(userId)  ){
             log.warn("댓글을 작성한 사람만 삭제할 수 있습니다.");
             throw new RuntimeException("댓글을 작성한 사람만 삭제할 수 있습니다.");
         }

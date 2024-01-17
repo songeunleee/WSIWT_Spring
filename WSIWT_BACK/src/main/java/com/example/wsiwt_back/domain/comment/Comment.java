@@ -2,6 +2,7 @@ package com.example.wsiwt_back.domain.comment;
 
 import com.example.wsiwt_back.domain.BaseTimeEntity;
 import com.example.wsiwt_back.domain.ootd.OOTD;
+import com.example.wsiwt_back.domain.user.UserEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Getter;
@@ -35,9 +36,10 @@ public class Comment  extends BaseTimeEntity {
 
     public String content;
 
-    private String author;
-
-    private String userId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    @JsonIgnore
+    private UserEntity user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
@@ -52,11 +54,10 @@ public class Comment  extends BaseTimeEntity {
 
 
     @Builder
-    public Comment(String id,  String content, String author, String userId, OOTD ootd, Comment parent, Long depth,List<Comment> child){
+    public Comment(String id,  String content, String author, UserEntity user, OOTD ootd, Comment parent, Long depth,List<Comment> child){
         this.id = id;
         this.content = content;
-        this.author = author;
-        this.userId = userId;
+        this.user = user;
         this.ootd = ootd;
         this.parent = parent;
         this.depth = depth;
