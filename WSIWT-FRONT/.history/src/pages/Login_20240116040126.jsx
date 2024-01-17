@@ -33,9 +33,10 @@ export default function Login() {
 
           <input
             className="border border-stone-300 rounded-sm w-full p-1 outline-none"
-            type="password"
+            type="text"
             placeholder="비밀번호"
             name="password"
+            password
             onChange={handleChange}
           />
           <Button text="login" onClick={handleClick} />

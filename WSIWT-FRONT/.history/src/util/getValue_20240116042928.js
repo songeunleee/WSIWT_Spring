@@ -227,17 +227,19 @@ export const publishedAt = (publishedAt, text) => {
   let result;
   const t = (now - time) / 1000;
 
-  if (t < 60) return Math.floor(t) + "초 전" + text;
+  if (t < 60) result = Math.floor(t) + "초 전";
   const tm = t / 60;
-  if (tm < 60) return Math.floor(tm) + "분 전" + text;
+  if (tm < 60) result = Math.floor(tm) + "분 전";
   const th = tm / 60;
-  if (th < 24) return Math.floor(th) + "시간 전" + text;
+  if (th < 24) result = Math.floor(th) + "시간 전";
   const td = th / 24;
-  if (td < 8) return Math.floor(td) + "일 전" + text;
+  if (td < 8) result = Math.floor(td) + "일 전";
   const tw = td / 7;
-  if (tw < 5) return Math.floor(tw) + "주 전" + text;
+  if (tw < 5) result = Math.floor(tw) + "주 전";
   const tmon = td / 30;
-  if (tw < 30) return Math.floor(tmon) + "달 전" + text;
+  if (tw < 30) result = Math.floor(tmon) + "달 전";
   const ty = td / 365;
-  return Math.floor(ty) + "년 전" + text;
+  result = Math.floor(ty) + "년 전";
+
+  return text ? result + text : result;
 };

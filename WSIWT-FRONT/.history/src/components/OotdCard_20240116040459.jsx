@@ -8,7 +8,6 @@ import { useAuthContext } from "../context/AuthContext";
 import { deleteOOTD } from "../api/database";
 import { useNavigate } from "react-router-dom";
 import useOotd from "../hooks/useOotd";
-import { publishedAt } from "../util/getValue";
 
 export default function OotdCard({ ootd, onDelete }) {
   const { user } = useAuthContext();
@@ -21,7 +20,6 @@ export default function OotdCard({ ootd, onDelete }) {
   const handleClickUpdate = (ootd) => {
     navigation("/ootd/update", { state: ootd });
   };
-  console.log(ootd);
   return (
     <section className="flex flex-col justify-center items-center   rounded-xl bg-color3 py-5 mb-3">
       <img className=" bg-black w-11/12 " src={ootd.imgUrl} alt="" />
@@ -30,23 +28,18 @@ export default function OotdCard({ ootd, onDelete }) {
         <div className="flex justify-between">
           <User
             user={{
-              picture: ootd.author.picture,
-              username: ootd.author.username,
+              picture: "images/winter_hat.png",
+              username: ootd.author,
             }}
           />
-          {user && user.username === ootd.author.username && (
-            <div className="flex gap-1.5  items-center">
+          {user && user.username === ootd.author && (
+            <div className="flex gap-1.5">
               <button onClick={() => handleClickUpdate(ootd)}>
                 <HiPencilSquare />
               </button>
               <button onClick={() => handleClickDelete(ootd.id)}>
                 <BsFillTrashFill />
               </button>
-              <div className="text-neutral-700 font-bold text-sm">
-                {ootd.createdAt === ootd.updatedAt
-                  ? publishedAt(ootd.createdAt, "")
-                  : publishedAt(ootd.updatedAt, " (수정됨)")}
-              </div>
             </div>
           )}
         </div>

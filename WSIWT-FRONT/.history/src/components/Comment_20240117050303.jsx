@@ -93,10 +93,7 @@ export default function Comment({ nested, comment, parentAuthor }) {
         )}
       </div>
       {showInput && (
-        <Input
-          nested={comment.author.username}
-          onClick={handleNestedCommentAdd}
-        />
+        <Input nested={comment.author} onClick={handleNestedCommentAdd} />
       )}
       {comment.child.length > 0 &&
         comment.child.map((child) => (

@@ -59,12 +59,7 @@ export default function Comment({ nested, comment, parentAuthor }) {
         }`}
       >
         {nested && <BsArrowReturnRight />}
-        <User
-          user={{
-            picture: comment.author.picture,
-            username: comment.author.username,
-          }}
-        />
+        <User user={{ picture: "images/user.png", username: comment.author }} />
         {nested && (
           <div className="font-bold text-stone-700">@{parentAuthor}</div>
         )}
@@ -76,7 +71,7 @@ export default function Comment({ nested, comment, parentAuthor }) {
           )}
         </div>
 
-        {user && user.username === comment.author.username && (
+        {user && user.username === comment.author && (
           <div className="flex gap-1.5">
             <button onClick={() => handleClickUpdate(comment.id)}>
               <HiPencilSquare />
@@ -93,10 +88,7 @@ export default function Comment({ nested, comment, parentAuthor }) {
         )}
       </div>
       {showInput && (
-        <Input
-          nested={comment.author.username}
-          onClick={handleNestedCommentAdd}
-        />
+        <Input nested={comment.author} onClick={handleNestedCommentAdd} />
       )}
       {comment.child.length > 0 &&
         comment.child.map((child) => (
@@ -104,7 +96,7 @@ export default function Comment({ nested, comment, parentAuthor }) {
             nested
             comment={child}
             key={child.id}
-            parentAuthor={comment.author.username}
+            parentAuthor={comment.author}
           />
         ))}
     </section>

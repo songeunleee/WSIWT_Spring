@@ -8,7 +8,6 @@ import NestedComment from "./NestedComment";
 import { useAuthContext } from "../context/AuthContext";
 import useOotd from "../hooks/useOotd";
 import { updateComment } from "../api/database";
-import { publishedAt } from "../util/getValue";
 
 export default function Comment({ nested, comment, parentAuthor }) {
   const { user } = useAuthContext();
@@ -42,13 +41,12 @@ export default function Comment({ nested, comment, parentAuthor }) {
   };
 
   const handleNestedCommentAdd = (input) => {
-    user
-      ? addNestedComment.mutate({
-          ootdId: comment.ootdId,
-          commentSaveDto: { content: input, author: user.username },
-          id: comment.id,
-        })
-      : alert("로그인 후 이용해 주세요.");
+    user ?
+      addNestedComment.mutate({
+        ootdId: comment.ootdId,
+        commentSaveDto: { content: input, author: user.username },
+        id: comment.id,
+      }):alert(로그인 후 이용해 주세요)
   };
 
   return (
@@ -59,12 +57,7 @@ export default function Comment({ nested, comment, parentAuthor }) {
         }`}
       >
         {nested && <BsArrowReturnRight />}
-        <User
-          user={{
-            picture: comment.author.picture,
-            username: comment.author.username,
-          }}
-        />
+        <User user={{ picture: "images/coat.png", username: comment.author }} />
         {nested && (
           <div className="font-bold text-stone-700">@{parentAuthor}</div>
         )}
@@ -76,7 +69,7 @@ export default function Comment({ nested, comment, parentAuthor }) {
           )}
         </div>
 
-        {user && user.username === comment.author.username && (
+        {user && user.username === comment.author && (
           <div className="flex gap-1.5">
             <button onClick={() => handleClickUpdate(comment.id)}>
               <HiPencilSquare />
@@ -84,19 +77,11 @@ export default function Comment({ nested, comment, parentAuthor }) {
             <button onClick={() => handleClickDelete(comment.id)}>
               <BsFillTrashFill />
             </button>
-            <div className="text-neutral-700 font-bold text-sm">
-              {comment.createdAt === comment.updatedAt
-                ? publishedAt(comment.createdAt, "")
-                : publishedAt(comment.updatedAt, " (수정됨)")}
-            </div>
           </div>
         )}
       </div>
       {showInput && (
-        <Input
-          nested={comment.author.username}
-          onClick={handleNestedCommentAdd}
-        />
+        <Input nested={comment.author} onClick={handleNestedCommentAdd} />
       )}
       {comment.child.length > 0 &&
         comment.child.map((child) => (
@@ -104,7 +89,7 @@ export default function Comment({ nested, comment, parentAuthor }) {
             nested
             comment={child}
             key={child.id}
-            parentAuthor={comment.author.username}
+            parentAuthor={comment.author}
           />
         ))}
     </section>

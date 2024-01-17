@@ -30,11 +30,11 @@ export default function OotdCard({ ootd, onDelete }) {
         <div className="flex justify-between">
           <User
             user={{
-              picture: ootd.author.picture,
-              username: ootd.author.username,
+              picture: "images/winter_hat.png",
+              username: ootd.author,
             }}
           />
-          {user && user.username === ootd.author.username && (
+          {user && user.username === ootd.author && (
             <div className="flex gap-1.5  items-center">
               <button onClick={() => handleClickUpdate(ootd)}>
                 <HiPencilSquare />
@@ -44,7 +44,7 @@ export default function OotdCard({ ootd, onDelete }) {
               </button>
               <div className="text-neutral-700 font-bold text-sm">
                 {ootd.createdAt === ootd.updatedAt
-                  ? publishedAt(ootd.createdAt, "")
+                  ? publishedAt(ootd.createdAt)
                   : publishedAt(ootd.updatedAt, " (수정됨)")}
               </div>
             </div>
