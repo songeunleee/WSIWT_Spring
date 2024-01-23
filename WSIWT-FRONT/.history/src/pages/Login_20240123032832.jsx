@@ -58,7 +58,7 @@ export default function Login() {
             onClick={() => handleSocialLogin("google")}
           />
           <img
-            className="w-11 cursor-pointer"
+            className="w-11"
             src="images/github.png"
             alt="github"
             onClick={() => handleSocialLogin("github")}

@@ -75,8 +75,9 @@ const router = createBrowserRouter([
         element: <Signup />,
       },
     ],
+    path: "sociallogin",
+    element: <SocialLogin />,
   },
-  { path: "sociallogin", element: <SocialLogin /> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

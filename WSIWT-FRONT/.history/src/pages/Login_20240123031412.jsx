@@ -52,16 +52,16 @@ export default function Login() {
         </div>
         <div className="flex justify-center items-center gap-10 my-8">
           <img
-            className="w-11 cursor-pointer"
+            className="w-11"
             src="images/google.png"
             alt="google"
-            onClick={() => handleSocialLogin("google")}
+            onClick={handleSocialLogin("google")}
           />
           <img
-            className="w-11 cursor-pointer"
+            className="w-11"
             src="images/github.png"
             alt="github"
-            onClick={() => handleSocialLogin("github")}
+            onClick={handleSocialLogin("github")}
           />
         </div>
       </form>

@@ -26,7 +26,10 @@ const router = createBrowserRouter([
         index: true,
         element: <Main />,
       },
-
+      {
+        path: "sociallogin",
+        element: <SocialLogin />,
+      },
       {
         path: "weatherdetail/:date",
         element: <WeatherDetail />,
@@ -76,7 +79,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  { path: "sociallogin", element: <SocialLogin /> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
