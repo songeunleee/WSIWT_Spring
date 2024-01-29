@@ -34,7 +34,7 @@ export default function OotdCard({ ootd, onDelete }) {
               username: ootd.author.username,
             }}
           />
-          <div className="flex gap-1.5 items-center">
+          <div className="flex gap-1.5">
             {user && user.username === ootd.author.username && (
               <div className="flex gap-1.5  items-center">
                 <button onClick={() => handleClickUpdate(ootd)}>

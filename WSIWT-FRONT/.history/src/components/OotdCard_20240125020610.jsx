@@ -27,29 +27,27 @@ export default function OotdCard({ ootd, onDelete }) {
       <img className=" bg-black w-11/12 " src={ootd.imgUrl} alt="" />
 
       <div className="  border-l-2 border-b-2 border-r-2 rounded-b-xl p-3 border-color4 text-left w-11/12">
-        <div className="flex justify-between items-center">
+        <div className="flex  items-center">
           <User
             user={{
               picture: ootd.author.picture,
               username: ootd.author.username,
             }}
           />
-          <div className="flex gap-1.5 items-center">
-            {user && user.username === ootd.author.username && (
-              <div className="flex gap-1.5  items-center">
-                <button onClick={() => handleClickUpdate(ootd)}>
-                  <HiPencilSquare />
-                </button>
-                <button onClick={() => handleClickDelete(ootd.id)}>
-                  <BsFillTrashFill />
-                </button>
-              </div>
-            )}
-            <div className="text-neutral-700 font-bold text-sm">
-              {ootd.createdAt === ootd.updatedAt
-                ? publishedAt(ootd.createdAt, "")
-                : publishedAt(ootd.updatedAt, " (수정됨)")}
+          {user && user.username === ootd.author.username && (
+            <div className="flex gap-1.5  items-center">
+              <button onClick={() => handleClickUpdate(ootd)}>
+                <HiPencilSquare />
+              </button>
+              <button onClick={() => handleClickDelete(ootd.id)}>
+                <BsFillTrashFill />
+              </button>
             </div>
+          )}
+          <div className="text-neutral-700 font-bold text-sm">
+            {ootd.createdAt === ootd.updatedAt
+              ? publishedAt(ootd.createdAt, "")
+              : publishedAt(ootd.updatedAt, " (수정됨)")}
           </div>
         </div>
         <div className="mt-1">{ootd.content}</div>

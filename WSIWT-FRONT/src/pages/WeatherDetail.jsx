@@ -7,7 +7,7 @@ import WeatherInfoDetail from "../components/WeatherInfoDetail";
 export default function WeatherDetail() {
   const location = useLocation();
   const weatherInfo = location.state;
-  console.log(weatherInfo);
+
   return (
     <section className="flex flex-col items-center mx-2">
       <WeatherInfoDetail data={weatherInfo} />

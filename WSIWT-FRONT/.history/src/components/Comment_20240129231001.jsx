@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Children, useState } from "react";
 import User from "./User";
 import { HiPencilSquare } from "react-icons/hi2";
 import { BsFillTrashFill } from "react-icons/bs";
@@ -7,7 +7,7 @@ import Input from "./Input";
 
 import { useAuthContext } from "../context/AuthContext";
 import useOotd from "../hooks/useOotd";
-
+import { updateComment } from "../api/database";
 import { publishedAt } from "../util/getValue";
 
 export default function Comment({ nested, comment, parentAuthor }) {

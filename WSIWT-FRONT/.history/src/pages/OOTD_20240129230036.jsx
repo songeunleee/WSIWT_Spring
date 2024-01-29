@@ -32,7 +32,7 @@ export default function OOTD() {
     setPage((pre) => pre - 1);
   };
   return (
-    <section className="flex flex-col items-center w-full" ref={target}>
+    <section className="flex flex-col items-center" ref={target}>
       <button
         onClick={handleClick}
         className="flex w-max justify-center items-center text-xl font-bold bg-color4 p-2 px-4 mb-4 rounded-full"
@@ -40,11 +40,11 @@ export default function OOTD() {
         NEW &nbsp; <HiPlusCircle />
       </button>
       {!isLoading ? (
-        <div className="flex flex-col w-full bg-color4 p-3 ">
+        <div className="flex flex-col bg-color4 p-3 ">
           {myOotd.content.length > 0 ? (
             myOotd.content.map((item) => <OotdCard ootd={item} key={item.id} />)
           ) : (
-            <div className="flex flex-col justify-center items-center text-2xl font-bold rounded-xl bg-color3 p-6">
+            <div className="flex flex-col justify-center items-center   rounded-xl bg-color3">
               피드가 없습니다.
             </div>
           )}

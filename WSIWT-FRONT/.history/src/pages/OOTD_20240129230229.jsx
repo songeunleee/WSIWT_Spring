@@ -44,7 +44,7 @@ export default function OOTD() {
           {myOotd.content.length > 0 ? (
             myOotd.content.map((item) => <OotdCard ootd={item} key={item.id} />)
           ) : (
-            <div className="flex flex-col justify-center items-center text-2xl font-bold rounded-xl bg-color3 p-6">
+            <div className="flex flex-col justify-center items-center   rounded-xl bg-color3 p-6">
               피드가 없습니다.
             </div>
           )}
