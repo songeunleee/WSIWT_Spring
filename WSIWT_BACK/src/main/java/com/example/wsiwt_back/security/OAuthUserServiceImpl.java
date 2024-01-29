@@ -32,16 +32,24 @@ public class OAuthUserServiceImpl extends DefaultOAuth2UserService {
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         final OAuth2User oAuth2User = super.loadUser(userRequest);
 
-        try {
-            log.info("OAuth2User attributes {}", new ObjectMapper().writeValueAsString(oAuth2User.getAttributes()));
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-
-        final String username = (String) oAuth2User.getAttributes().get("login");
-        final String picture = (String) oAuth2User.getAttributes().get("avatar_url");
+//        try {
+//            log.info("OAuth2User attributes {}", new ObjectMapper().writeValueAsString(oAuth2User.getAttributes()));
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
+        //디버깅을 돕기위해 사용자 정보가 어떻게 되는지 로깅함. 테스팅 시에만 사용
         final String authProvider = userRequest.getClientRegistration().getClientName();
+        String username;
+        String picture;
 
+        if(authProvider.equals("Google")){
+            username = (String) oAuth2User.getAttributes().get("name");
+            picture = (String)  oAuth2User.getAttributes().get("picture");
+        }else{
+            username = (String) oAuth2User.getAttributes().get("login");
+            picture = (String) oAuth2User.getAttributes().get("avatar_url");
+
+        }
         UserEntity userEntity = null;
 
         if (!userRepository.existsByUsername(username)) {
@@ -59,5 +67,8 @@ public class OAuthUserServiceImpl extends DefaultOAuth2UserService {
                 authProvider);
         return new ApplicationOAuth2User(userEntity.getId(),oAuth2User.getAttributes());
     }
+
 }
+
+
 

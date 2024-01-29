@@ -15,6 +15,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.Http403ForbiddenEntryPoint;
+import org.springframework.security.web.csrf.CsrfFilter;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.CorsFilter;
 
 @RequiredArgsConstructor
@@ -40,6 +43,8 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
+
+
          http
                 .cors()
                 .and()
@@ -65,11 +70,15 @@ public class WebSecurityConfig {
                  .userInfoEndpoint()
                  .userService(oAuthUserService)
                  .and()
-                 .successHandler(oAuthSuccessHandler);
+                 .successHandler(oAuthSuccessHandler)
+                 .and()
+                 .exceptionHandling()
+                    .authenticationEntryPoint(new Http403ForbiddenEntryPoint());
 
 
          http.addFilterAfter(jwtAuthenticationFilter, CorsFilter.class);
          http.addFilterBefore(redirectUrlFilter, OAuth2AuthorizationRequestRedirectFilter.class);
+
 
         return http.build();
     }

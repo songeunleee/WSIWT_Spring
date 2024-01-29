@@ -16,6 +16,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Optional;
 
@@ -40,7 +42,8 @@ public class OAuthSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
         UserEntity user = userRepository.findById(authentication.getName()).orElseThrow(()->new IllegalArgumentException(" not exist : " + authentication.getName()));
         String picture = user.getPicture();
-        String username = user.getUsername();
+        String username = URLEncoder.encode(user.getUsername(),"UTF-8");
+
         String id = user.getId();
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -55,10 +58,11 @@ public class OAuthSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
         response.sendRedirect(redirectUri.orElseGet(() -> LOCAL_REDIRECT_URL) + "/sociallogin?token=" + token + "&user=" +userJson);
 
         log.info("token {}", token );
-        log.info("username {}", user );
+        log.info("username {}", username );
         log.info("picture {}", picture );
 
     }
+
 
 
 
