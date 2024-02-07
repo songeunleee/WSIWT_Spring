@@ -9,5 +9,4 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface CommentRepository extends JpaRepository<Comment,String> {
-    Page<Comment> findCommentBy(Pageable pageable);
 }

@@ -20,6 +20,8 @@ export default function OOTD() {
     }
   );
 
+  console.log(myOotd);
+
   const handleClick = () => {
     navigate("new");
   };

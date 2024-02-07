@@ -65,5 +65,4 @@ public class OOTDService {
         return ootdRepository.findAll(pageable);
     }
 
-
 }

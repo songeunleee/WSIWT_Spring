@@ -58,6 +58,10 @@ public class CommentService {
         return comment;
     }
 
+    public Page<Comment> findCommentAsPagenation(Pageable pageable){
+        return commentRepository.findAll(pageable);
+    }
+
 
 
 }

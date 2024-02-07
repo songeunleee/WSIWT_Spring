@@ -6,6 +6,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.web.server.authentication.AnonymousAuthenticationWebFilter;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -42,6 +43,8 @@ public class TokenProvider {
 
         return claims.getSubject();
     }
+
+
     public String create(final Authentication authentication) {
         ApplicationOAuth2User userPrincipal = (ApplicationOAuth2User) authentication.getPrincipal();
         Date expiryDate = Date.from(
