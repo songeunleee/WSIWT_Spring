@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: /WSIWT_BACK
+        working-directory: ./WSIWT_BACK
     permissions:
       contents: read
       packages: write
