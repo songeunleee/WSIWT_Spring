@@ -34,14 +34,10 @@ public class OOTD extends BaseTimeEntity {
     @Column(nullable = false)
     public String content;
 
-    private String author;
-
     @JsonIgnore
     @ManyToOne( fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private UserEntity user;
-
-
 
     @JsonIgnore
     @OneToMany(mappedBy = "ootd",fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
@@ -53,7 +49,6 @@ public class OOTD extends BaseTimeEntity {
     public OOTD(Long id, String content, String author, String url, UserEntity user,List<Comment> comments){
         this.id = id;
         this.content = content;
-        this.author = author;
         this.url = url;
         this.user = user;
         this.comments = comments;

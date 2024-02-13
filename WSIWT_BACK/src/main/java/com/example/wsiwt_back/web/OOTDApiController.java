@@ -54,7 +54,7 @@ public class OOTDApiController {
     public ResponseEntity<?> save(@AuthenticationPrincipal String userId, @RequestBody OOTDSaveRequestDto requestDto){
 
         UserEntity user = userService.findById(userId);
-        OOTD ootd = OOTD.builder().user(user).url(requestDto.getUrl()).author(requestDto.getAuthor()).content(requestDto.getContent()).build();
+        OOTD ootd = OOTD.builder().user(user).url(requestDto.getUrl()).content(requestDto.getContent()).build();
 
         return  ResponseEntity.status(HttpStatus.CREATED).body(ootdService.save(ootd));
     }
