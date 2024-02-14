@@ -32,12 +32,11 @@ jobs:
           utcOffset: "+09:00"
 
       - name: Docker build and push
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
-          context: .
-          file: ./WSIWT_BACK/Dockerfile
+          file: WSIWT_BACK/Dockerfile
+          platforms: linux/amd64
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/wsiwt:latest
 
       - name: Beanstalk Deploy
         uses: einaregilsson/beanstalk-deploy@ebe3476a4ce991d54336935e75e78dd9d86f9408
