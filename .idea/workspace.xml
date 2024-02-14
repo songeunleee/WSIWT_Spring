@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da17c7a8-c7d6-4c22-8dc8-82c158cc89d2" name="Changes" comment="cicd">
-      <change beforePath="$PROJECT_DIR$/WSIWT_BACK/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/WSIWT_BACK/Dockerfile" afterDir="false" />
-    </list>
+    <list default="true" id="da17c7a8-c7d6-4c22-8dc8-82c158cc89d2" name="Changes" comment="cicd" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,13 +33,6 @@
       <updated>1694503229393</updated>
       <workItem from="1694503231954" duration="65000" />
       <workItem from="1703060620861" duration="77000" />
-    </task>
-    <task id="LOCAL-00001" summary="dockerfile">
-      <created>1707849017532</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1707849017532</updated>
     </task>
     <task id="LOCAL-00002" summary="ci">
       <created>1707849210406</created>
@@ -365,7 +356,28 @@
       <option name="project" value="LOCAL" />
       <updated>1707903591252</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="cicd">
+      <created>1707903958255</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1707903958255</updated>
+    </task>
+    <task id="LOCAL-00049" summary="cicd">
+      <created>1707904155107</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1707904155107</updated>
+    </task>
+    <task id="LOCAL-00050" summary="cicd">
+      <created>1707904258372</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1707904258373</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
