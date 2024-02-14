@@ -18,11 +18,16 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
 
-      - name: Login to Docker hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Build with Gradle
+        run: ./gradlew build -x test
+      - name: Docker build
+        run: |
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+          docker build -t wsiwt .
+          docker tag spring-cicd songeunlee/wsiwt:${GITHUB_SHA::7}
+          docker push songeunlee/wsiwt:${GITHUB_SHA::7}
 
       - name: Get current time
         uses: 1466587594/get-current-time@v2
@@ -30,15 +35,6 @@ jobs:
         with:
           format: YYYYMMDD_HH-mm-ss
           utcOffset: "+09:00"
-
-      - name: Docker build and push
-        uses: docker/build-push-action@v2
-        id: docker_build
-        with:
-          context: .
-          file: ./WSIWT_BACK/Dockerfile
-          push: true
-          tags: songeunlee/wsiwt4:latest
 
 
       - name: Beanstalk Deploy
@@ -49,5 +45,5 @@ jobs:
           application_name: ${{ secrets.AWS_APPLICATION_NAME }}
           environment_name: ${{ secrets.AWS_ENVIROMENT_NAME }}
           region: us-west-2
-          version_label: latest
+          version_label: earth-docker-${{steps.current-time.outputs.formattedTime}}
           deployment_package: Dockerrun.aws.json
