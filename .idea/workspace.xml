@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da17c7a8-c7d6-4c22-8dc8-82c158cc89d2" name="Changes" comment="cicd">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WSIWT_BACK/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/WSIWT_BACK/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WSIWT_BACK/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WSIWT_BACK/src/main/java/com/example/wsiwt_back/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/WSIWT_BACK/src/main/java/com/example/wsiwt_back/config/WebSecurityConfig.java" afterDir="false" />
-    </list>
+    <list default="true" id="da17c7a8-c7d6-4c22-8dc8-82c158cc89d2" name="Changes" comment="cicd" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +23,12 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\songeun\Desktop\WSIWT_BACK_CHANGE\WSIWT_BACK" />
+      <recent name="C:\Users\songeun\Desktop\WSIWT_BACK_CHANGE" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -38,20 +39,6 @@
       <updated>1694503229393</updated>
       <workItem from="1694503231954" duration="65000" />
       <workItem from="1703060620861" duration="77000" />
-    </task>
-    <task id="LOCAL-00011" summary="ci">
-      <created>1707850191554</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1707850191554</updated>
-    </task>
-    <task id="LOCAL-00012" summary="ci">
-      <created>1707850347570</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1707850347570</updated>
     </task>
     <task id="LOCAL-00013" summary="cicd">
       <created>1707889745122</created>
@@ -382,7 +369,21 @@
       <option name="project" value="LOCAL" />
       <updated>1707905759607</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="cicd">
+      <created>1707908747333</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1707908747333</updated>
+    </task>
+    <task id="LOCAL-00061" summary="cicd">
+      <created>1707908869144</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1707908869144</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,6 +399,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dockerfile" />

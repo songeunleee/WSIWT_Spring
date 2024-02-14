@@ -36,7 +36,7 @@ jobs:
         id: docker_build
         with:
           context: .
-          file: ./WSIWT_BACK/Dockerfile
+          file: ./Dockerfile
           push: true
           tags: songeunlee/wsiwt:latest
 
