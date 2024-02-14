@@ -34,9 +34,15 @@ jobs:
       - name: Docker build and push
         uses: docker/build-push-action@v3
         with:
+          context: .
           file: WSIWT_BACK/Dockerfile
           platforms: linux/amd64
           push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+            # build Cache 적용
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: Beanstalk Deploy
         uses: einaregilsson/beanstalk-deploy@ebe3476a4ce991d54336935e75e78dd9d86f9408
