@@ -8,6 +8,6 @@ public class HealthCheckController {
 
     @GetMapping("/")
     public String healthCheck(){
-        return "The wsiwt service with docker githubaction eb is up and running...";
+        return "The wsiwt service with docker githubaction eb iam  is up and running...";
     }
 }
