@@ -33,12 +33,12 @@ jobs:
 
       - name: Docker build and push
         uses: docker/build-push-action@v2
-          id: docker_build
-          with:
-            context: .
-            file: ./WSIWT_BACK/Dockerfile
-            push: true
-            tags: |
+        id: docker_build
+        with:
+          context: .
+          file: ./WSIWT_BACK/Dockerfile
+          push: true
+          tags: |
               ghcr.io/songrunlee/wsiwt:latest
 
 
