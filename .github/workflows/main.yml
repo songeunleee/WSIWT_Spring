@@ -11,19 +11,6 @@ on: # main branch에 push를 할 때 동작합니다!
   push:
     branches: [ main ]
 
-  workflow_dispatch:
-
-env:
-  # Java
-  JAVA_VERSION: 1.15
-  # DockerHub
-  DOCKER_HUB_USERNAME: songeunlee
-  # AWS & Elastic Bean Stalk
-  AWS_REGION: us-west-2
-  EB_ENVIRONMENT_NAME: WSIWT-BACK-SERVICE-dev
-  EB_APPLICATION_NAME: WSIWT-BACK-SERVICE
-  EB_DEPLOYMENT_PACKAGE: elasticbeanstalk/docker-compose.yml
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
