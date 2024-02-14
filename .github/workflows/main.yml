@@ -36,13 +36,13 @@ jobs:
         id: docker_build
         with:
           context: .
-          file: ./Dockerfile
+          file: ./WSIWT_BACK/Dockerfile
           push: true
           tags: songeunlee/wsiwt:latest
 
 
       - name: Beanstalk Deploy
-        uses: einaregilsson/beanstalk-deploy@ebe3476a4ce991d54336935e75e78dd9d86f9408
+        uses: einaregilsson/beanstalk-deploy@v20
         with:
           aws_access_key: ${{ secrets.AWS_ACCCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

@@ -1,12 +1,12 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "songeunlee/wsiwt2:0.0.5",
+    "Name": "jaden/node-project",
     "Update": "true"
   },
   "Ports": [
     {
-      "ContainerPort": 5000,
+      "ContainerPort": 3000,
       "HostPort": 5000
     }
   ]
