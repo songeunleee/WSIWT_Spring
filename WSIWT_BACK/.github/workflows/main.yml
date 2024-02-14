@@ -14,9 +14,7 @@ on: # main branch에 push를 할 때 동작합니다!
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./WSIWT_BACK
+
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
