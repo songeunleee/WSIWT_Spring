@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "songeunlee/wsiwt:lateset",
+    "Name": "songeunlee/wsiwt:latest",
     "Update": "true"
   },
   "Ports": [
