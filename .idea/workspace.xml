@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da17c7a8-c7d6-4c22-8dc8-82c158cc89d2" name="Changes" comment="cicd">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WSIWT_BACK/Dockerrun.aws.json" beforeDir="false" afterPath="$PROJECT_DIR$/WSIWT_BACK/Dockerrun.aws.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,34 +35,6 @@
       <updated>1694503229393</updated>
       <workItem from="1694503231954" duration="65000" />
       <workItem from="1703060620861" duration="77000" />
-    </task>
-    <task id="LOCAL-00006" summary="ci">
-      <created>1707849696941</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1707849696941</updated>
-    </task>
-    <task id="LOCAL-00007" summary="ci">
-      <created>1707849842377</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1707849842377</updated>
-    </task>
-    <task id="LOCAL-00008" summary="ci">
-      <created>1707849924289</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1707849924289</updated>
-    </task>
-    <task id="LOCAL-00009" summary="ci">
-      <created>1707850002387</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1707850002387</updated>
     </task>
     <task id="LOCAL-00010" summary="ci">
       <created>1707850165169</created>
@@ -380,7 +351,35 @@
       <option name="project" value="LOCAL" />
       <updated>1707904893927</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="cicd">
+      <created>1707905320670</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1707905320670</updated>
+    </task>
+    <task id="LOCAL-00056" summary="cicd">
+      <created>1707905352253</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1707905352253</updated>
+    </task>
+    <task id="LOCAL-00057" summary="cicd">
+      <created>1707905442417</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1707905442417</updated>
+    </task>
+    <task id="LOCAL-00058" summary="cicd">
+      <created>1707905544884</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1707905544884</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
