@@ -50,4 +50,4 @@ jobs:
           environment_name: ${{ secrets.AWS_ENVIROMENT_NAME }}
           region: us-west-2
           version_label: earth-docker-${{steps.current-time.outputs.formattedTime}}
-          deployment_package: WSIWT_BACK/Dockerrun.aws.json
+          deployment_package: Dockerrun.aws.json
