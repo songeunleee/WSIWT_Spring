@@ -40,7 +40,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/wsiwt:latest
 
       - name: Beanstalk Deploy
-        uses: einaregilsson/beanstalk-deploy@v20
+        uses: einaregilsson/beanstalk-deploy@ebe3476a4ce991d54336935e75e78dd9d86f9408
         with:
           aws_access_key: ${{ secrets.AWS_ACCCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -48,3 +48,4 @@ jobs:
           environment_name: ${{ secrets.AWS_ENVIROMENT_NAME }}
           region: us-west-2
           version_label: earth-docker-${{steps.current-time.outputs.formattedTime}}
+          deployment_package: WSIWT_BACK/Dockerrun.aws.json
