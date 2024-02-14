@@ -1,13 +1,3 @@
 {
-  "AWSEBDockerrunVersion": "1",
-  "Image": {
-    "Name": "jaden/node-project",
-    "Update": "true"
-  },
-  "Ports": [
-    {
-      "ContainerPort": 3000,
-      "HostPort": 5000
-    }
-  ]
+
 }
