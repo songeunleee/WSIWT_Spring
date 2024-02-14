@@ -1,3 +1,13 @@
 {
-
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "songeunlee/wsiwt",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": 5000,
+      "HostPort": 5000
+    }
+  ]
 }
