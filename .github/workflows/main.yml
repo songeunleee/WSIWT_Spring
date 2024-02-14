@@ -38,7 +38,7 @@ jobs:
           context: .
           file: ./WSIWT_BACK/Dockerfile
           push: true
-          tags: songrunlee/wsiwt:latest
+          tags: songeunlee/wsiwt:latest
 
 
       - name: Beanstalk Deploy
