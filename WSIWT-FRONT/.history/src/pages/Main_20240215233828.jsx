@@ -43,7 +43,7 @@ export default function Main() {
       </div>
       {weatherQuery.isLoading ? (
         <div className="mt-5 flex justify-center w-full rounded-md  bg-color2  ">
-          <Loading bordert={"color1"} border={"color5"} />
+          <Loading bgcolor={color1} color={color5} />
         </div>
       ) : (
         <Swiper

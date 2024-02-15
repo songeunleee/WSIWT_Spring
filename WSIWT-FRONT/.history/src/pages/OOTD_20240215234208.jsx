@@ -63,7 +63,7 @@ export default function OOTD() {
         </div>
       ) : (
         <div className=" flex justify-center w-full bg-color3  ">
-          <Loading bordert="color2" border="color4" />
+          <Loading bgcolor={"color4"} color={"color3"} />
         </div>
       )}
     </section>
