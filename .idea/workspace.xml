@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da17c7a8-c7d6-4c22-8dc8-82c158cc89d2" name="Changes" comment="cicd">
-      <change beforePath="$PROJECT_DIR$/WSIWT_BACK/src/main/java/com/example/wsiwt_back/controller/HealthCheckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WSIWT_BACK/src/main/java/com/example/wsiwt_back/controller/HealthCheckController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +41,6 @@
       <updated>1694503229393</updated>
       <workItem from="1694503231954" duration="65000" />
       <workItem from="1703060620861" duration="77000" />
-    </task>
-    <task id="LOCAL-00032" summary="cicd">
-      <created>1707899127998</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1707899127998</updated>
     </task>
     <task id="LOCAL-00033" summary="cicd">
       <created>1707899471291</created>
@@ -385,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707940327461</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="cicd">
+      <created>1707940685489</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1707940685489</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
