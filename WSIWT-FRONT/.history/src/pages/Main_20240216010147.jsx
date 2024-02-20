@@ -50,7 +50,7 @@ export default function Main() {
           hashNavigation={{
             watchState: true,
           }}
-          className="mt-5 flex items-center max-w-full rounded-xl  border border-color5"
+          className="mt-5 flex items-center max-w-full rounded-md  border border-color1"
           initialSlide={0}
           autoHeight={true}
           navigation

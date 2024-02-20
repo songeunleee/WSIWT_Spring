@@ -16,7 +16,7 @@ export default function GeneralClothes({ temperature }) {
   const { clothesList } = usePublic(temperature);
 
   return (
-    <div className="flex flex-1 justify-around bg-color2 py-2 rounded-3xl">
+    <div className="flex flex-1 justify-around bg-color5 py-2">
       <img
         className="w-12 h-12"
         src={clothesList && clothesList[0].image}

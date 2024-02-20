@@ -42,7 +42,7 @@ export default function Main() {
         </button>
       </div>
       {weatherQuery.isLoading ? (
-        <div className="mt-5 flex justify-center w-full rounded-md  bg-color2  ">
+        <div className="mt-5 flex justify-center w-full rounded-md  bborder-color2  ">
           <Loading bordert={"color1"} border={"color5"} />
         </div>
       ) : (
@@ -50,7 +50,7 @@ export default function Main() {
           hashNavigation={{
             watchState: true,
           }}
-          className="mt-5 flex items-center max-w-full rounded-xl  border border-color5"
+          className="mt-5 flex items-center max-w-full rounded-md  bg-color2"
           initialSlide={0}
           autoHeight={true}
           navigation

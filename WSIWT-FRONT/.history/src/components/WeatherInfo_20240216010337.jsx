@@ -10,7 +10,7 @@ export default function WeatherInfo({ data, date, time, today }) {
   }
 
   return (
-    <section className="py-3 pt-5">
+    <section className="p-3 pt-5">
       <div className="flex justify-center items-center pb-5 text-xl font-bold">
         <MdDateRange /> &nbsp;
         {moment(date).format("YYYY. MM. DD")}

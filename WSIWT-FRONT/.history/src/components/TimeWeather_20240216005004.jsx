@@ -14,10 +14,10 @@ export default function TimeWeather({ data }) {
   return (
     <section
       onClick={handleClick}
-      className="flex border-t-2 border-r px-3 border-color2 py-2 items-center cursor-pointer hover:ease-in duration-200 hover:scale-102 overflow-x-auto hover:shadow-md"
+      className="flex border border-color3 items-center cursor-pointer hover:ease-in duration-200 hover:scale-102 overflow-x-auto"
     >
-      <div className="  border-color2 items-center w-20 py-1 pt-2 ">
-        <div className="  flex items-center justify-center ">
+      <div className=" bg-color4 rounded-lg  items-center w-20 py-1 pt-2 ">
+        <div className="flex items-center justify-center ">
           <div className="w-6 mr-2">
             {weatherImg(
               data[0].fcstTime,

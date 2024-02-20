@@ -10,12 +10,12 @@ export default function WeatherInfo({ data, date, time, today }) {
   }
 
   return (
-    <section className="py-3 pt-5">
+    <section className="p-3 pt-5">
       <div className="flex justify-center items-center pb-5 text-xl font-bold">
         <MdDateRange /> &nbsp;
         {moment(date).format("YYYY. MM. DD")}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2">
         {data &&
           division(
             data.filter((item) =>
