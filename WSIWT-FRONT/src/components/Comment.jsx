@@ -54,27 +54,31 @@ export default function Comment({ nested, comment, parentAuthor }) {
   return (
     <section className=" border-color ">
       <div
-        className={`flex items-center justify-between w-full gap-2 py-1.5 p-1 px-3   ${
+        className={`flex items-center  w-full gap-2 py-1.5 p-1 px-3   ${
           nested && `bg-color1`
         }`}
       >
-        {nested && <BsArrowReturnRight />}
-        <User
-          user={{
-            picture: comment.author.picture,
-            username: comment.author.username,
-          }}
-        />
-        {nested && (
+        <div className="flex-1"> 
+          <div className="flex items-center pb-1"> {nested && <BsArrowReturnRight /> }  &nbsp;&nbsp;
+            <User
+              user={{
+              picture: comment.author.picture,
+              username: comment.author.username,
+              }}
+            />
+          </div>
+         
+         {nested && (
           <div className="font-bold text-stone-700">@{parentAuthor}</div>
         )}
-        <div className="font flex-1" onClick={handleClick}>
+        <div className="font flex-1 pl-2" onClick={handleClick}>
           {!edit ? (
             comment.content
           ) : (
             <Input input={comment.content} onClick={handleSubmitUpdate} />
           )}
-        </div>
+        </div></div>
+       
 
         {user && user.username === comment.author.username && (
           <div className="flex gap-1.5">

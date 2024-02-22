@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function User({ user }) {
+export default function User({ user, nav }) {
   return (
     <div className="flex items-center shrink-0">
       <img
@@ -8,7 +8,7 @@ export default function User({ user }) {
         src={user.picture}
         alt={user.username}
       />
-      <div className="hidden md:block ml-2 font-bold">{user.username}</div>
+      <div className={nav ? "hidden md:block ml-2 font-bold" : "ml-2 font-bold"}>{user.username}</div>
     </div>
   );
 }

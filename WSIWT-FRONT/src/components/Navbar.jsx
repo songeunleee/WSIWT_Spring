@@ -22,7 +22,7 @@ export default function Navbar() {
         <div>WSIWT</div>
       </Link>
       <nav className="flex items-center text-xl gap-2 ml-2">
-        {user && <User user={user} />}
+        {user && <User user={user} nav/>}
         {user && (
           <Link to="/mycloset" className="text-4xl">
             <BiCloset />

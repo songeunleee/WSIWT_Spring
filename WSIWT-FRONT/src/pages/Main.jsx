@@ -31,7 +31,7 @@ export default function Main() {
   };
 
   return (
-    <section className=" flex flex-col items-center h-full  mx-2">
+    <section className=" flex flex-col items-center h-full  mx-2 ">
       <div className="flex items-center justify-center">
         <RegionInfo data={regionQuery.data} />
         <button

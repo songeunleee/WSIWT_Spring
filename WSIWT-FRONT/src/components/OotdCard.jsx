@@ -23,10 +23,10 @@ export default function OotdCard({ ootd, onDelete }) {
   };
   console.log(ootd);
   return (
-    <section className="flex flex-col justify-center items-center   rounded-xl bg-color3 py-5 mb-3">
-      <img className=" bg-black w-11/12 " src={ootd.imgUrl} alt="" />
+    <section className="flex flex-col justify-center items-center   rounded-xl  bg-color3 py-5 mb-3">
+      <img className=" bg-black w-11/12 rounded-t-xl " src={ootd.imgUrl} alt="" />
 
-      <div className="  border-l-2 border-b-2 border-r-2 rounded-b-xl p-3 border-color4 text-left w-11/12">
+      <div className="  border-l-2 border-b-2 border-r-2 rounded-b-xl p-3  border-color4 text-left w-11/12">
         <div className="flex justify-between items-center">
           <User
             user={{
@@ -36,7 +36,7 @@ export default function OotdCard({ ootd, onDelete }) {
           />
           <div className="flex gap-1.5 items-center">
             {user && user.username === ootd.author.username && (
-              <div className="flex gap-1.5  items-center">
+              <div className="flex gap-1.5  items-center ">
                 <button onClick={() => handleClickUpdate(ootd)}>
                   <HiPencilSquare />
                 </button>
