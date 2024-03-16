@@ -74,9 +74,10 @@
 
 ## Project Structure.
 ### 📄 Architecture
-![WSIWT_acrchitecture](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/0ef8d443-7f1b-4448-88c5-28410cfb9d54)
+![WSIWT_acrchitecture](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/a54697ed-8d02-4e66-b681-ccd9f9e198f2)
+
 ### 📄 ERD
-![Untitled (1)](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/f02ce2c5-0420-4683-8d3d-b3ac04d06f54)
+![Untitled (1)](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/c2fbfa1f-9d9e-4b94-8059-44e6240a0dc0)
 ### 📄 API document
 
 ### swagger로 작성  
