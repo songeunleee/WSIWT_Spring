@@ -74,7 +74,7 @@
 
 ## Project Structure.
 ### 📄 Architecture
-![WSIWT_acrchitecture](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/a54697ed-8d02-4e66-b681-ccd9f9e198f2)
+![wsiwt_architecture](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/04417835-c33c-4dd0-8199-8e16d3271264)
 
 ### 📄 ERD
 ![Untitled (1)](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/c2fbfa1f-9d9e-4b94-8059-44e6240a0dc0)
