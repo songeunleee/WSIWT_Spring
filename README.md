@@ -97,6 +97,33 @@
 
 
 ## Screen.
+### MAIN
+![메](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/9b680194-bc79-4289-81c2-0977f721ca90)
+### LOGIN
+![로그인](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/30c8c0b3-9bd0-4467-9ca8-82c4f0dfa0e8)
+### SIGNUP
+![회원가입](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/94645338-9c83-4c8f-9f3a-8e50901d72f1)
+### 상세
+![날씨 상세1](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/ac5cd306-42f1-4ecf-8df1-c8240d645f9d)
+![날씨 상세2](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/c4bb6d9b-ebee-4951-a136-b8d5349c5981)
+### 반응형 구현
+![-Clipchamp1-ezgif com-crop (1)](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/4ff01680-f4a3-426f-88c8-b2f6faae8a69)
+
+### MY CLOSET
+![my closet](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/d20c0108-e04f-454a-a6ae-30f07beb6ae3)
+### MY CLOSET 추가
+
+![mycloset-Clipchamp-ezgif com-crop](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/2f5a6a8f-ce3b-4682-8fb5-2e55c525257c)
+### OOTD
+![ootd](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/5ccdb44d-be11-4d61-8e18-a9816e2063eb)
+### 페이지네이션
+![페이지네이션1](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/bbab9cdc-5431-4c80-b6a9-8a49e8e47921)
+![페이지네이션 2](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/28436c8e-4053-4862-842c-af867a1c0f79)
+### 댓글
+![댓](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/53c56a4c-2e84-4bf1-8a93-78d783412eb0)
+### 대댓글
+![대댓글1](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/6017df62-de45-48b8-8376-46a275fcf125)
+![대댓글2](https://github.com/songeunleee/WSIWT_Spring/assets/80832015/214702ed-0754-4003-8877-b849b7e6028f)
 
 
 
