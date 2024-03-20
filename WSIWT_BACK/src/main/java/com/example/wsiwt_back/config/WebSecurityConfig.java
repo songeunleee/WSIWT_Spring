@@ -35,9 +35,8 @@ public class WebSecurityConfig {
     public WebSecurityCustomizer configure(){
         return (web) -> web.ignoring()
 
-                //.requestMatchers(PathRequest.toH2Console())
-                .antMatchers(String.valueOf(PathRequest.toH2Console()))
-                .antMatchers("/static/**");
+               //.requestMatchers(PathRequest.toH2Console())
+                .antMatchers(String.valueOf(PathRequest.toH2Console())).antMatchers("/static/**");
 
     }
 
@@ -58,7 +57,7 @@ public class WebSecurityConfig {
                  .authorizeHttpRequests(authorize -> authorize
 
                          .antMatchers("/","/css/**","/images/**","/js/**","/profile","/auth/**","/ootds","/oauth2/**","/h2-console/**",
-                                 "/v3/api-docs/**", "/swagger-ui/**", "/swagger-resources/**","/v3/**").permitAll()
+                                 "/v3/api-docs/**", "/swagger-ui/**", "/swagger-resources/**","/v3/**","/open-api/**").permitAll()
 
                          .anyRequest().authenticated())
                  .oauth2Login()

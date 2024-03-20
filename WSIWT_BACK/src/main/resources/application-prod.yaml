@@ -41,3 +41,8 @@ spring:
         user-info-uri: https://api.github.com/user
       google:
         authorization-uri: https://google.com/login/oauth/authorize
+
+weather_apikey: ${WEATHER_API_KEY}
+kakao_key: ${KAKAO_KEY}
+cloudinary_url: ${CLOUDINARY_URL}
+cloudinary_preset: ${CLOUDINARY_PRESET}
