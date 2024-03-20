@@ -25,13 +25,7 @@ public class KakaoService {
                 .uri("/coord2regioncode.json?x={longitude}&y={latitude}", longitude, latitude)
                 .header(HttpHeaders.AUTHORIZATION, "KakaoAK " + kakao_key)
                 .retrieve()
-                .bodyToMono(String.class)
-                .map(this::extractAddressName);
+                .bodyToMono(String.class);
     }
 
-    private String extractAddressName(String responseJson) {
-        int startIndex = responseJson.indexOf("address_name") + 15;
-        int endIndex = responseJson.indexOf("\"", startIndex);
-        return responseJson.substring(startIndex, endIndex);
-    }
 }
