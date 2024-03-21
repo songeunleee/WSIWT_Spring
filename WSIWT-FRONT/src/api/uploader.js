@@ -1,11 +1,15 @@
 import axios from "axios";
+import { call } from "./Auth";
+import { API_BASE_URL } from "../api-config";
 
 export async function uploadImage(file) {
   const data = new FormData();
   data.append("file", file);
-  data.append("upload_preset", process.env.REACT_APP_CLOUDINARY_PRESET);
+  console.log(data);
 
-  const response = await axios.post(process.env.REACT_APP_CLOUDINARY_URL, data);
+  const response = await call("/image","POST",data,true);
+  
+  console.log(response.data.url);
 
   return response.data.url;
 }

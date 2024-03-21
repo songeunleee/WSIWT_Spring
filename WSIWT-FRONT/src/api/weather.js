@@ -1,10 +1,7 @@
-import axios from "axios";
 import { dfs_xy_conv } from "./xy";
 import moment from "moment";
+import { call } from "./Auth";
 
-const instance = axios.create({
-  baseURL: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0",
-});
 
 export async function getVilageFcst(latitude, longitude) {
   const rs = dfs_xy_conv(longitude, latitude);
@@ -37,19 +34,10 @@ export async function getVilageFcst(latitude, longitude) {
     basetime = "2300";
   }
 
-  const res = await instance.get("/getVilageFcst", {
-    params: {
-      serviceKey: process.env.REACT_APP_API_KEY,
-      pageNo: 1,
-      numOfRows: 1000,
-      dataType: "JSON",
-      base_date: basedate,
-      base_time: basetime,
-      nx: rs.x,
-      ny: rs.y,
-    },
-  });
+  
+  const res = await call(`/open-api/weather/${basedate}/${basetime}/${rs.x}/${rs.y}`, "GET");
 
+  
   return res.data.response.body.items.item.filter(
     (item) =>
       item.category !== "REH" &&

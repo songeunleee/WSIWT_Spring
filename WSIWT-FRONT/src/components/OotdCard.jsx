@@ -21,7 +21,7 @@ export default function OotdCard({ ootd, onDelete }) {
   const handleClickUpdate = (ootd) => {
     navigation("/ootd/update", { state: ootd });
   };
-  console.log(ootd);
+
   return (
     <section className="flex flex-col justify-center items-center   rounded-xl  bg-color3 py-5 mb-3">
       <img className=" bg-black w-11/12 rounded-t-xl " src={ootd.imgUrl} alt="" />

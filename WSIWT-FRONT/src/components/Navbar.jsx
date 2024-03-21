@@ -11,7 +11,7 @@ export default function Navbar() {
   const handleClick = (e) => {
     navigation("/login");
   };
-  console.log(user);
+  
   return (
     <header className="flex justify-between items-center p-2 py-3">
       <Link

@@ -39,16 +39,24 @@ export function socialLogin(provider) {
   console.log(frontendUrl);
 }
 
-export function call(api, method, request) {
+export function call(api, method, request,img) {
   let headers = { "Content-Type": "application/json" };
 
   const accessToken = localStorage.getItem("ACCESS_TOKEN");
   if (accessToken && accessToken !== null) {
-    headers = {
+    headers = { 
       "Content-Type": "application/json",
-      Authorization: "Bearer " + accessToken,
-    };
+       Authorization: "Bearer " + accessToken,
+     };
+    if(img === true){
+      headers = { 
+        "Content-Type": "multipart/form-data",
+         Authorization: "Bearer " + accessToken,
+       };
+    }
+
   }
+
 
   return axios(API_BASE_URL + api, {
     method: method,
@@ -56,6 +64,7 @@ export function call(api, method, request) {
     headers: headers,
   })
     .then((res) => {
+      
       if (res.status === 200 || 201) {
         return res;
       } else if (res.status === 403) {
