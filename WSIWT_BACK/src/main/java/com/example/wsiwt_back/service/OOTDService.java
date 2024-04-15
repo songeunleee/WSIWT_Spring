@@ -34,6 +34,7 @@ public class OOTDService {
         return ootdRepository.findAll();
     }
 
+
     public void delete(Long id,String userId){
 
         OOTD ootd = ootdRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
@@ -63,6 +64,10 @@ public class OOTDService {
 
     public Page<OOTD> findOOTDAsPagenation(Pageable pageable){
         return ootdRepository.findAll(pageable);
+    }
+
+    public Page<OOTD> findByUserIdPagenation(String userId, Pageable pageable){
+        return ootdRepository.findByUserId(userId,pageable);
     }
 
 }

@@ -9,6 +9,7 @@ import com.example.wsiwt_back.service.UserService;
 import com.example.wsiwt_back.web.dto.PageRequestDto;
 import com.example.wsiwt_back.web.dto.PageResponeDto;
 import com.example.wsiwt_back.web.dto.ResponseDto;
+import com.example.wsiwt_back.web.dto.clothes.ClothesResponseDto;
 import com.example.wsiwt_back.web.dto.ootd.OOTDPaginationResponseDto;
 import com.example.wsiwt_back.web.dto.ootd.OOTDResponseDto;
 import com.example.wsiwt_back.web.dto.ootd.OOTDSaveRequestDto;
@@ -76,6 +77,25 @@ public class OOTDApiController {
 
         return ResponseEntity.ok().body(responseDto);
     }
+
+    @ApiOperation("ootds readById")
+    @ApiResponse(responseCode = "200" , description = "사용자별 ootd 데이터 불러오기")
+    @PostMapping("/api/v1/myootds")
+    public ResponseEntity<OOTDPaginationResponseDto> findById(@AuthenticationPrincipal String userId, @RequestBody PageRequestDto requestDto){
+        //= clothesService.FindByUserId(userId).stream().map( ClothesResponseDto::new).collect(Collectors.toList());
+
+        PageRequest pageable = PageRequest.of(requestDto.getPage(), 5, Sort.by("id").descending());
+        Page<OOTD> page = ootdService.findByUserIdPagenation(userId,pageable);
+
+        List<OOTDResponseDto> ootds = page
+                .stream()
+                .map(item-> new OOTDResponseDto(item))
+                .collect(Collectors.toList());
+
+        OOTDPaginationResponseDto responseDto = new OOTDPaginationResponseDto(ootds,new PageResponeDto(page));
+        return ResponseEntity.ok().body(responseDto);
+    }
+
     @ApiOperation(value = "ootd update")
     @ApiResponse(responseCode = "200", description = "ootd 수정 성공" )
     @PutMapping("api/v1/ootd/{id}")
