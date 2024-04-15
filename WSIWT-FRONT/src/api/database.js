@@ -5,6 +5,12 @@ export async function getOOTDs(pageDto) {
   return call("/ootds", "POST", pageDto);
 }
 
+export function getMyOOTD(pageDto) {
+  
+  return call("/api/v1/myootds", "POST", pageDto);
+}
+
+
 export function postOOTD(saveDto) {
   console.log(saveDto);
   return call("/api/v1/ootd", "POST", saveDto);

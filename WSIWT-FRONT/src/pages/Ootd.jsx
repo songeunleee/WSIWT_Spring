@@ -2,22 +2,19 @@ import React, { useRef, useState } from "react";
 import OotdCard from "../components/OotdCard";
 import { HiPlusCircle } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-import { getOOTDs } from "../api/database";
+import { getMyOOTD, getOOTDs } from "../api/database";
 
 import Loading from "../components/Loading";
 import Button from "../ui/Button";
 import { useQuery } from "@tanstack/react-query";
-export default function OOTD() {
+export default function OOTD({ myPage }) {
   const navigate = useNavigate();
   const target = useRef(null);
   const [page, setPage] = useState(0);
 
   const { data: myOotd, isLoading } = useQuery(
     ["myOotd", page],
-    () => getOOTDs({ page }).then((res) => res.data),
-    {
-      staleTime: 1000 * 60,
-    }
+    () => myPage ? getMyOOTD({ page }).then((res) => res.data) : getOOTDs({ page }).then((res) => res.data)
   );
 
 
@@ -35,12 +32,18 @@ export default function OOTD() {
   };
   return (
     <section className="flex flex-col items-center w-full px-2 " ref={target}>
+      {!myPage ? 
       <button
         onClick={handleClick}
         className="flex  w-max justify-center items-center text-xl font-bold bg-color4 p-2 px-4 mb-4 rounded-full"
       >
         NEW &nbsp; <HiPlusCircle />
-      </button>
+      </button> : <button
+       
+        className="flex  w-max justify-center items-center text-xl font-bold bg-color4 p-2 px-4 my-4 rounded-full"
+      >
+        MY OOTD
+      </button>}
       {!isLoading ? (
         <div className="flex flex-col w-full border border-color4 p-4 rounded-xl h-fit">
           {myOotd.content.length > 0 ? (
