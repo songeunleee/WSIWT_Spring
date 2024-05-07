@@ -1,5 +1,6 @@
 package com.example.wsiwt_back.web;
 
+import com.example.wsiwt_back.service.CityService;
 import com.example.wsiwt_back.service.ImageUploaderService;
 import com.example.wsiwt_back.service.KakaoService;
 import com.example.wsiwt_back.service.WeatherService;
@@ -21,6 +22,7 @@ public class OpenApiController {
     private final WeatherService weatherService;
     private final KakaoService kakaoService;
     private final ImageUploaderService imageUploaderService;
+    private final CityService cityService;
 
     @GetMapping("/open-api/weather/{base_date}/{base_time}/{nx}/{ny}")
     public ResponseEntity<?> getWeather(@PathVariable String base_date, @PathVariable String base_time,@PathVariable int nx,@PathVariable int ny){
@@ -39,6 +41,12 @@ public class OpenApiController {
     @PostMapping("/image")
     public ResponseEntity<?> getUrl(@RequestBody MultipartFile file){
         String result = imageUploaderService.getUrl(file).block();
+        return ResponseEntity.ok().body(result);
+    }
+
+    @GetMapping("/open-api/city/{cityName}")
+    public ResponseEntity<?> getCityData(@PathVariable String cityName){
+        String result = cityService.getCityData(cityName);
         return ResponseEntity.ok().body(result);
     }
 

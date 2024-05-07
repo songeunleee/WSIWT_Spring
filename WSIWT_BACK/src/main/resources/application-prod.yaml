@@ -46,3 +46,4 @@ weather_apikey: ${WEATHER_API_KEY}
 kakao_key: ${KAKAO_KEY}
 cloudinary_url: ${CLOUDINARY_URL}
 cloudinary_preset: ${CLOUDINARY_PRESET}
+city_key : ${CITY_KEY}
