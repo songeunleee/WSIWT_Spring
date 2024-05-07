@@ -43,7 +43,7 @@ export default function NewOotd() {
   };
 
   return (
-    <section>
+    <section className="p-2">
       <form className="flex flex-col">
         <div className="flex flex-col justify-center mb-3 items-center">
           {file && (

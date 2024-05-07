@@ -17,6 +17,7 @@ import Signup from "./pages/Signup";
 import UpdateOotd from "./pages/UpdateOotd";
 import SocialLogin from "./pages/SocialLogin";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        element: <Main />,
+      },
+      {
+        path: '/:place',
         element: <Main />,
       },
 
@@ -74,6 +79,7 @@ const router = createBrowserRouter([
         path: "signup",
         element: <Signup />,
       },
+      
     ],
   },
   { path: "sociallogin", element: <SocialLogin /> },

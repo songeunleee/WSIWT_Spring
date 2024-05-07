@@ -26,7 +26,7 @@ export default function TimeWeather({ data }) {
               parseInt(data[3].fcstValue)
             )}
           </div>
-          <div className="ml-1 font-bold">{data[0].fcstValue}°</div>
+          <div className="ml-1 font-bold">{data[0].fcstValue}℃</div>
         </div>
         <div className="flex justify-center pt-2 text-sm text-stone-800 font-bold">
           {time(data[0].fcstTime)}

@@ -17,5 +17,7 @@ export default function usePublic(temperature) {
     data.items.filter((item) => item.type.includes(getType(temperature)));
 
   const categoryList = data && data.categoryList;
-  return { clothesList, categoryList };
+
+  const placeList = data && data.place;
+  return { clothesList, categoryList,placeList };
 }

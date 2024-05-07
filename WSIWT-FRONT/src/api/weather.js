@@ -6,6 +6,7 @@ import { call } from "./Auth";
 export async function getVilageFcst(latitude, longitude) {
   const rs = dfs_xy_conv(longitude, latitude);
 
+
   const today = moment().format("YYYYMMDD");
   const yesterday = moment().subtract(1, "days").format("YYYYMMDD");
   const now = moment().format("HHmm");

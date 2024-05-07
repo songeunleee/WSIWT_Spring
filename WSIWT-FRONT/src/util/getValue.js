@@ -89,6 +89,20 @@ export function weatherImg(TIME, SKY, PTY) {
   }
 }
 
+export function getSKY(SKY_STTS) {
+  if (SKY_STTS === "맑음") return 1;
+  else if (SKY_STTS == "구름 많음") return 3;
+  else return 4;
+}
+
+export function getPTY(PREFCPT_TYPE) {
+  if (PREFCPT_TYPE === "비") return 1;
+  else if (PREFCPT_TYPE === "눈") return 3;
+  else if (PREFCPT_TYPE === "소나기") return 4;
+  else if(PREFCPT_TYPE == '없음') return 0;
+  else return 2;
+}
+
 export function setType(middle, sub) {
   let type = [];
   if (!sub) {
@@ -241,3 +255,14 @@ export const publishedAt = (publishedAt, text) => {
   const ty = td / 365;
   return Math.floor(ty) + "년 전" + text;
 };
+export function division(arr, n) {
+  const length = arr.length;
+  const divide = Math.floor(length / n);
+  const newArray = [];
+
+  for (let i = 0; i < divide; i++) {
+    newArray.push(arr.splice(0, n));
+  }
+
+  return newArray;
+}

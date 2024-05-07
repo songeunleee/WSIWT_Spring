@@ -2,12 +2,15 @@ import moment from "moment";
 import React from "react";
 import TimeWeather from "./TimeWeather";
 import { MdDateRange } from "react-icons/md";
+import { division } from "../util/getValue";
 
 export default function WeatherInfo({ data, date, time, today }) {
   if (time > "2310" || time < "0000") {
     date = moment(date).add(1, "days").format("YYYYMMDD");
     today = false;
   }
+
+
 
   return (
     <section className="py-3 pt-5">
@@ -31,14 +34,4 @@ export default function WeatherInfo({ data, date, time, today }) {
   );
 }
 
-const division = (arr, n) => {
-  const length = arr.length;
-  const divide = Math.floor(length / n);
-  const newArray = [];
 
-  for (let i = 0; i < divide; i++) {
-    newArray.push(arr.splice(0, n));
-  }
-
-  return newArray;
-};
