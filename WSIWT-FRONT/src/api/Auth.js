@@ -64,15 +64,10 @@ export function call(api, method, request,img) {
     headers: headers,
   })
     .then((res) => {
-      
+  
       if (res.status === 200 || 201) {
         return res;
-      } else if (res.status === 403) {
-        localStorage.setItem("ACCESS_TOKEN", null);
-        localStorage.removeItem("USER");
-        window.location.href("/login");
-
-      } else {
+      }  else {
         Promise.reject(res);
         throw Error(res);
       }
@@ -80,6 +75,12 @@ export function call(api, method, request,img) {
     .catch((error) => {
       console.log("http error");
       console.log(error);
+      if(error.response.status===403){
+        console.log(error.response.status);
+        localStorage.setItem("ACCESS_TOKEN", null);
+        localStorage.removeItem("USER");
+        window.location.href = '/login';
+      }
       return error.response;
     });
 }
