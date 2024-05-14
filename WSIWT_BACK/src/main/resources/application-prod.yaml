@@ -25,7 +25,7 @@ spring:
           github:
             clientId: ${GITHUB_ID}
             clientSecret: ${GITHUB_SECRET}
-            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            redirectUri: "https://api.wsiwt.store/oauth2/callback/{registrationId}"
             scope:
               - user:email
               - read:user
