@@ -32,7 +32,7 @@ spring:
           google:
             clientId: ${GOOGLE_ID}
             clientSecret: ${GOOGLE_SECRET}
-            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            redirectUri: "https://api.wsiwt.store/oauth2/callback/{registrationId}"
             scope:
               - email
               - profile
