@@ -241,9 +241,6 @@ export const publishedAt = (publishedAt, text) => {
   const now = new Date();
   const time = new Date(publishedAt);
 
-
-  console.log("게시" , moment(time).add(9, 'h').toDate());
-  console.log("현재" ,moment(now).toDate());
   let result;
   const t = (moment(now).toDate() - moment(time).add(9, 'h').toDate()) / 1000;
 
