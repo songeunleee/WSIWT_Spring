@@ -1,6 +1,10 @@
 server:
   port: 5000
 spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
   jpa:
     database: MYSQL
     show-sql: true
