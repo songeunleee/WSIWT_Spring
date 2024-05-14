@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export function getType(temperature) {
   if (temperature <= 4) {
     return 0;
@@ -238,8 +240,12 @@ export function setType(middle, sub) {
 export const publishedAt = (publishedAt, text) => {
   const now = new Date();
   const time = new Date(publishedAt);
+
+
+  console.log("게시" , moment(time).add(9, 'h').toDate());
+  console.log("현재" ,moment(now).toDate());
   let result;
-  const t = (now - time) / 1000;
+  const t = (moment(now).toDate() - moment(time).add(9, 'h').toDate()) / 1000;
 
   if (t < 60) return Math.floor(t) + "초 전" + text;
   const tm = t / 60;
@@ -265,4 +271,9 @@ export function division(arr, n) {
   }
 
   return newArray;
+}
+
+export const utcToKst = (value) => {
+  const dateValue = moment(value).add(9, 'h');
+  return dateValue;
 }
