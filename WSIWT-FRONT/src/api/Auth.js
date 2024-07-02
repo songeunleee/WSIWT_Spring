@@ -76,10 +76,8 @@ export function call(api, method, request,img) {
       console.log("http error");
       console.log(error);
       if(error.response.status===403){
-        console.log(error.response.status);
         localStorage.setItem("ACCESS_TOKEN", null);
         localStorage.removeItem("USER");
-        window.location.href = '/login';
       }
       return error.response;
     });
