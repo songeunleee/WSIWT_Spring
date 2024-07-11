@@ -7,7 +7,8 @@ import moment from "moment";
 import GeneralClothes from "./GeneralClothes";
 
 export default function CityInfo({ data }) {
-  const warn = data.NEWS_LIST.filter((item) => item.COMMAND !== "");
+  const warn = data.NEWS_LIST.filter((item) => item.COMMAND !== "해제");
+  const Nonwarn = data.NEWS_LIST.filter((item) => item.COMMAND == "해제");
   const [show, setShow] = useState(false);
   const color = (idx) => {
     if (idx === "좋음" || idx === "낮음") {
@@ -30,13 +31,33 @@ export default function CityInfo({ data }) {
     <section className="border mt-5 flex flex-col w-full p-1">
       <div>
         {warn.length > 0 &&
-          warn.map((item) => (
             <div className="flex items-center p-1 m-1 bg-gray-100 rounded-md">
-              <div className="flex items-center">
-                <div className="text-2xl text-red-600 px-1 animate-pulse">
+              <div className="text-2xl text-red-600 px-1 animate-pulse">
                   <IoIosWarning />
                 </div>
-                <div className="flex bg-stone-200 p-1 rounded-2xl justify-center items-center pr-2 mr-2">
+          {warn.map((item) => (
+              <div className="flex items-center">
+                
+                <div className="flex bg-stone-200 p-1 rounded-2xl justify-center items-center pr-2 mr-2 min-w-fit">
+                  <div className="bg-stone-400 rounded-xl mr-0.5 px-1.5 font-bold">
+                    {item.WARN_VAL}
+                  </div>
+                  {item.WARN_STRESS}
+                </div>
+                <div>{item.COMMAND == '해제' && item.WARN_MSG}</div>
+              </div>
+          ))}
+            </div>}
+
+            {Nonwarn.length > 0 &&
+            <div className="flex items-center p-1 m-1 bg-gray-100 rounded-md">
+              <div className="text-2xl text-red-600 px-1 animate-pulse">
+                  <IoIosWarning />
+                </div>
+          {Nonwarn.map((item) => (
+              <div className="flex items-center">
+                
+                <div className="flex bg-stone-200 p-1 rounded-2xl justify-center items-center pr-2 mr-2 min-w-fit">
                   <div className="bg-stone-400 rounded-xl mr-0.5 px-1.5 font-bold">
                     {item.WARN_VAL}
                   </div>
@@ -44,10 +65,10 @@ export default function CityInfo({ data }) {
                 </div>
                 <div>{item.WARN_MSG}</div>
               </div>
-            </div>
           ))}
+            </div>}
+            
       </div>
-
       <div className="">
         {
           data.PCP_MSG.split(".")
